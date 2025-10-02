@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Centro MEMI</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <a href="#" id="home-link-logo"><img src="images/logo-MEMI.png" alt="Logo MEMI" class="logo"></a>
+        <h1 class="header-title">CENTRO MEMI</h1>
+        <img src="images/logo-FCYT.png" alt="Logo FCYT" class="logo">
+    </header>
+
+    <nav class="navbar">
+        <button class="hamburger-menu" id="hamburger-menu">
+            <span class="hamburger-bar"></span>
+            <span class="hamburger-bar"></span>
+            <span class="hamburger-bar"></span>
+        </button>
+        <div class="nav-links-container" id="nav-links-container">
+            <button class="nav-link" data-target="home"><img src="images/icon-HOME.png" alt="Home" class="home-icon"></button>
+            <button class="nav-link" data-target="mision-vision">Misión, Visión y Valores</button>
+            <button class="nav-link" data-target="acerca-de">Acerca de</button>
+            <button class="nav-link" data-target="cursos">Cursos y Seminarios</button>
+            <button class="nav-link" data-target="servicios">Servicios</button>
+            <button class="nav-link" data-target="icpc">ICPC UMSS</button>
+            <button class="nav-link" data-target="contacto-nav">Contacto</button>
+            <button class="nav-link" data-target="publicaciones">Publicaciones</button>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <section id="home" class="content-section">
+            <h2 class="section-title">Últimas Noticias</h2>
+            <div class="carousel-container">
+                <div class="carousel-slide">
+                    <img src="images/placeholder-news.png" alt="Noticia 1">
+                    <div class="carousel-caption">
+                        <h3>Título de la Noticia 1</h3>
+                        <p>Resumen de la noticia 1...</p>
+                    </div>
+                </div>
+                <div class="carousel-slide" style="display: none;">
+                    <img src="images/placeholder-news.png" alt="Noticia 2">
+                    <div class="carousel-caption">
+                        <h3>Título de la Noticia 2</h3>
+                        <p>Resumen de la noticia 2...</p>
+                    </div>
+                </div>
+                <div class="carousel-slide" style="display: none;">
+                    <img src="images/placeholder-news.png" alt="Noticia 3">
+                    <div class="carousel-caption">
+                        <h3>Título de la Noticia 3</h3>
+                        <p>Resumen de la noticia 3...</p>
+                    </div>
+                </div>
+                <!-- Las noticias se añadirán aquí dinámicamente -->
+                <button class="carousel-control prev">&#10094;</button>
+                <button class="carousel-control next">&#10095;</button>
+            </div>
+        </section>
+        <section id="mision-vision" class="content-section" style="display: none;">
+            <h2>Misión, Visión y Valores</h2>
+            <!-- Contenido de Misión, Visión y Valores irá aquí -->
+        </section>
+        <section id="acerca-de" class="content-section" style="display: none;">
+            <h2>Acerca de</h2>
+            <!-- Contenido de Acerca de irá aquí -->
+        </section>
+        <section id="cursos" class="content-section" style="display: none;">
+            <h2>Cursos y Seminarios</h2>
+            <!-- Contenido de Cursos y Seminarios irá aquí -->
+        </section>
+        <section id="servicios" class="content-section" style="display: none;">
+            <h2>Servicios</h2>
+            <!-- Contenido de Servicios irá aquí -->
+        </section>
+        <section id="icpc" class="content-section" style="display: none;">
+            <h2>ICPC UMSS</h2>
+            <!-- Contenido de ICPC UMSS irá aquí -->
+        </section>
+        <section id="contacto-nav" class="content-section" style="display: none;">
+            <h2>Contacto</h2>
+            <!-- Contenido de Contacto irá aquí -->
+        </section>
+        <section id="publicaciones" class="content-section" style="display: none;">
+            <div class="publicaciones-container">
+                <!-- Columna 1: Lista de Publicaciones -->
+                <div class="publicaciones-col">
+                    <button class="toggle-button" id="toggle-publicaciones">Últimas Publicaciones</button>
+                    <div id="lista-publicaciones" class="toggle-content">
+                        <!-- Las cards de PDF se insertarán aquí dinámicamente -->
+                        <div class="pdf-card">
+                            <h4>Título del PDF 1</h4>
+                            <p>Breve descripción del documento...</p>
+                            <a href="#" target="_blank">Ver PDF</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Columna 2: Botones de subida -->
+                <div class="publicaciones-col">
+                    <button class="upload-button" id="open-pdf-form">Subir PDF</button>
+                    <button class="upload-button" id="open-news-form">Subir Nueva Noticia</button>
+                </div>
+            </div>
+
+            <!-- Formulario para subir PDF (oculto por defecto) -->
+            <div id="pdf-upload-form" class="upload-form" style="display: none;">
+                <h3>Subir Nuevo PDF</h3>
+                <form>
+                    <input type="text" placeholder="Título del PDF" required>
+                    <textarea placeholder="Descripción" required></textarea>
+                    <select required>
+                        <option value="" disabled selected>Seleccionar Tema</option>
+                        <option value="informatica">Informática</option>
+                        <option value="matematicas">Matemáticas</option>
+                    </select>
+                    <input type="file" accept=".pdf" required>
+                    <button type="submit">Guardar PDF</button>
+                    <button type="button" class="cancel-btn">Cancelar</button>
+                </form>
+            </div>
+
+            <!-- Formulario para subir Noticia (oculto por defecto) -->
+            <div id="news-upload-form" class="upload-form" style="display: none;">
+                <h3>Crear Nueva Noticia</h3>
+                <form>
+                    <input type="text" placeholder="Título de la Noticia" required>
+                    <textarea placeholder="Resumen de la noticia" required></textarea>
+                    <textarea placeholder="Descripción completa" rows="5" required></textarea>
+                    <label>Foto para el carrusel:</label>
+                    <input type="file" accept="image/*" required>
+                    <button type="submit">Guardar Noticia</button>
+                    <button type="button" class="cancel-btn">Cancelar</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-columns">
+            <div class="footer-col">
+                <p>Teléfono: (+591) 4 4666037</p>
+                <p>E-mail: memi@fcyt.umss.edu.bo</p>
+                <p><a href="https://www.facebook.com/memiumss/?locale=es_LA" target="_blank">Facebook: MEMI UMSS</a></p>
+            </div>
+            <div class="footer-col">
+                <p><a href="https://maps.app.goo.gl/5srt3FWma95Ww5mz8" target="_blank">Ubicación: Campus Central UMSS</a></p>
+                <p><a href="http://www.fcyt.umss.edu.bo" target="_blank">FCyT: Facultad de Ciencias y Tecnologia</a></p>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <p>© 2025 Centro MEMI – Universidad Mayor de San Simón</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
