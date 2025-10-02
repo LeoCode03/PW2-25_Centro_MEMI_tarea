@@ -4,15 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Centro MEMI</title>
+    <!-- Link to external stylesheet -->
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Header Section -->
     <header class="header">
-        <a href="#" id="home-link-logo"><img src="images/logo-MEMI.png" alt="Logo MEMI" class="logo"></a>
+        <a href="#" id="home-link-logo">
+            <img src="images/logo-MEMI.png" alt="Logo MEMI" class="logo">
+        </a>
         <h1 class="header-title">CENTRO MEMI</h1>
         <img src="images/logo-FCYT.png" alt="Logo FCYT" class="logo">
     </header>
 
+    <!-- Navigation Bar -->
     <nav class="navbar">
         <button class="hamburger-menu" id="hamburger-menu">
             <span class="hamburger-bar"></span>
@@ -20,7 +25,9 @@
             <span class="hamburger-bar"></span>
         </button>
         <div class="nav-links-container" id="nav-links-container">
-            <button class="nav-link" data-target="home"><img src="images/icon-HOME.png" alt="Home" class="home-icon"></button>
+            <button class="nav-link" data-target="home">
+                <img src="images/icon-HOME.png" alt="Home" class="home-icon">
+            </button>
             <button class="nav-link" data-target="mision-vision">Misión, Visión y Valores</button>
             <button class="nav-link" data-target="acerca-de">Acerca de</button>
             <button class="nav-link" data-target="cursos">Cursos y Seminarios</button>
@@ -31,7 +38,9 @@
         </div>
     </nav>
 
+    <!-- Main Content -->
     <main class="main-content">
+        <!-- Home Section -->
         <section id="home" class="content-section">
             <h2 class="section-title">Últimas Noticias</h2>
             <div class="carousel-container">
@@ -56,11 +65,12 @@
                         <p>Resumen de la noticia 3...</p>
                     </div>
                 </div>
-                <!-- Las noticias se añadirán aquí dinámicamente -->
                 <button class="carousel-control prev">&#10094;</button>
                 <button class="carousel-control next">&#10095;</button>
             </div>
         </section>
+
+        <!-- Misión, Visión y Valores Section -->
         <section id="mision-vision" class="content-section" style="display: none;">
             <h2>Misión, Visión y Valores</h2>
             <div class="mv-cards-row">
@@ -98,33 +108,104 @@
                 </div>
             </div>
         </section>
+
+        <!-- Acerca de Section -->
         <section id="acerca-de" class="content-section" style="display: none;">
             <h2>Acerca de</h2>
-            <!-- Contenido de Acerca de irá aquí -->
+            <div class="acerca-cards-col">
+                <div class="acerca-card" data-type="antecedentes">
+                    <img src="images/icon-ANTECEDENTES.png" alt="Antecedentes" class="acerca-icon">
+                    <h3>ANTECEDENTES</h3>
+                    <div class="acerca-card-desc">
+                        <p>Conoce la historia y evolución del Centro MEMI desde 1991 hasta la actualidad.</p>
+                    </div>
+                    <div class="acerca-card-content antecedentes-fases">
+                        <div class="fase-row fadein-on-scroll">
+                            <img src="images/icon-FASE1.png" alt="Fase 1" class="fase-img left">
+                            <div class="fase-text">
+                                <strong>Primera Fase (1991-1993):</strong>
+                                <p>En enero de 1991 inició sus actividades el Programa de Mejoramiento de la Enseñanza de la Matemática e Informática (MEMI), con el objetivo de mejorar la educación en las áreas de Matemática e Informática de la Facultad de Ciencias y Tecnología en la Universidad Mayor de San Simón. El Proyecto cubrió tres áreas: Matemáticas a nivel universitario, Matemáticas a nivel ciclo medio e Informática a nivel universitario.</p>
+                            </div>
+                        </div>
+                        <div class="fase-row fadein-on-scroll">
+                            <div class="fase-text">
+                                <strong>Segunda Fase (1994-1997):</strong>
+                                <p>La segunda fase del Programa MEMI abarca el período 1994-1997, en la cual se destacan los primeros posgrados de San Simón, en áreas de Matemática e Informática.</p>
+                            </div>
+                            <img src="images/icon-FASE2.png" alt="Fase 2" class="fase-img right">
+                        </div>
+                        <div class="fase-row fadein-on-scroll">
+                            <img src="images/icon-FASE3.png" alt="Fase 3" class="fase-img left">
+                            <div class="fase-text">
+                                <strong>Tercera Fase (1999-2003):</strong>
+                                <p>Finalmente, la tercera fase abarca el período 1999-2003. Su tarea fundamental, en base al compromiso asumido con los cooperantes holandeses (NUFFIC y la Universidad de Utrecht), fue garantizar la sostenibilidad de las actividades de este Programa.</p>
+                            </div>
+                        </div>
+                        <div class="fase-row fadein-on-scroll">
+                            <img src="images/icon-FASE4.png" alt="Fase 4" class="fase-img right">
+                            <div class="fase-text">
+                                <strong>Centro MEMI (2010 - Actualidad):</strong>
+                                <p>A partir del 2010, mediante Resolución Rectoral N° 389/10, el Programa MEMI adopta la denominación de Centro de Mejoramiento de la Enseñanza de la Matemática e Informática (Centro MEMI).</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="acerca-card" data-type="organigrama">
+                    <img src="images/icon-ORGANIGRAMA.png" alt="Organigrama" class="acerca-icon">
+                    <h3>ORGANIGRAMA</h3>
+                    <div class="acerca-card-desc">
+                        <p>Visualiza la estructura organizativa del Centro MEMI.</p>
+                    </div>
+                    <div class="acerca-card-content">
+                        <img src="images/ORGANIGRAMA.png" alt="Organigrama MEMI" style="width:100%;max-width:400px;display:block;margin:0 auto 16px auto;">
+                        <p>El organigrama del Centro MEMI muestra la estructura jerárquica y funcional de sus áreas y autoridades.</p>
+                    </div>
+                </div>
+                <div class="acerca-card" data-type="autoridades">
+                    <img src="images/icon-AUTORIDADES.png" alt="Autoridades" class="acerca-icon">
+                    <h3>AUTORIDADES</h3>
+                    <div class="acerca-card-desc">
+                        <p>Conoce a las autoridades y responsables actuales del Centro MEMI.</p>
+                    </div>
+                    <div class="acerca-card-content">
+                        <ul style="list-style:none;padding:0;text-align:left;max-width:400px;margin:0 auto;">
+                            <li><strong>Director:</strong> Dr. Juan Pérez</li>
+                            <li><strong>Coordinador Académico:</strong> Lic. María López</li>
+                            <li><strong>Responsable de Proyectos:</strong> Ing. Carlos Gómez</li>
+                            <li><strong>Secretaría:</strong> Sra. Ana Torres</li>
+                        </ul>
+                        <p>El equipo directivo del Centro MEMI está conformado por profesionales comprometidos con la excelencia educativa.</p>
+                    </div>
+                </div>
+            </div>
         </section>
+
+        <!-- Cursos y Seminarios Section -->
         <section id="cursos" class="content-section" style="display: none;">
             <h2>Cursos y Seminarios</h2>
-            <!-- Contenido de Cursos y Seminarios irá aquí -->
         </section>
+
+        <!-- Servicios Section -->
         <section id="servicios" class="content-section" style="display: none;">
             <h2>Servicios</h2>
-            <!-- Contenido de Servicios irá aquí -->
         </section>
+
+        <!-- ICPC UMSS Section -->
         <section id="icpc" class="content-section" style="display: none;">
             <h2>ICPC UMSS</h2>
-            <!-- Contenido de ICPC UMSS irá aquí -->
         </section>
+
+        <!-- Contacto Section -->
         <section id="contacto-nav" class="content-section" style="display: none;">
             <h2>Contacto</h2>
-            <!-- Contenido de Contacto irá aquí -->
         </section>
+
+        <!-- Publicaciones Section -->
         <section id="publicaciones" class="content-section" style="display: none;">
             <div class="publicaciones-container">
-                <!-- Columna 1: Lista de Publicaciones -->
                 <div class="publicaciones-col">
                     <button class="toggle-button" id="toggle-publicaciones">Últimas Publicaciones</button>
                     <div id="lista-publicaciones" class="toggle-content">
-                        <!-- Las cards de PDF se insertarán aquí dinámicamente -->
                         <div class="pdf-card">
                             <h4>Título del PDF 1</h4>
                             <p>Breve descripción del documento...</p>
@@ -132,15 +213,11 @@
                         </div>
                     </div>
                 </div>
-
-                <!-- Columna 2: Botones de subida -->
                 <div class="publicaciones-col">
                     <button class="upload-button" id="open-pdf-form">Subir PDF</button>
                     <button class="upload-button" id="open-news-form">Subir Nueva Noticia</button>
                 </div>
             </div>
-
-            <!-- Formulario para subir PDF (oculto por defecto) -->
             <div id="pdf-upload-form" class="upload-form" style="display: none;">
                 <h3>Subir Nuevo PDF</h3>
                 <form>
@@ -156,8 +233,6 @@
                     <button type="button" class="cancel-btn">Cancelar</button>
                 </form>
             </div>
-
-            <!-- Formulario para subir Noticia (oculto por defecto) -->
             <div id="news-upload-form" class="upload-form" style="display: none;">
                 <h3>Crear Nueva Noticia</h3>
                 <form>
@@ -173,6 +248,7 @@
         </section>
     </main>
 
+    <!-- Footer Section -->
     <footer class="footer">
         <div class="footer-columns">
             <div class="footer-col">
@@ -190,6 +266,7 @@
         </div>
     </footer>
 
+    <!-- Link to external JavaScript file -->
     <script src="script.js"></script>
 </body>
 </html>

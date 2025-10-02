@@ -1,5 +1,5 @@
 /* =====================
-   COLORES Y VARIABLES
+   VARIABLES DE COLOR
 ====================== */
 :root {
   --azul-memi: #013974;
@@ -12,7 +12,7 @@
 }
 
 /* =====================
-   RESET Y BASE
+   ESTILOS BASE
 ====================== */
 body {
   font-family: sans-serif;
@@ -47,6 +47,8 @@ body {
   text-align: center;
   flex-grow: 1;
 }
+
+/* Media Queries */
 @media (min-width: 768px) {
   .header .header-title {
     font-size: 2em;
@@ -79,8 +81,6 @@ body {
   height: calc(100vh - var(--header-height, 70px));
   background-color: #20abaf;
   flex-direction: column;
-  border: none;
-  z-index: 2000;
   justify-content: center;
   align-items: center;
   gap: 32px;
@@ -89,12 +89,15 @@ body {
   opacity: 0;
   pointer-events: none;
 }
+
 .nav-links-container.show {
   display: flex;
   transform: translateY(0);
   opacity: 1;
   pointer-events: auto;
 }
+
+/* Media Queries */
 @media (min-width: 768px) {
   .nav-links-container {
     display: flex !important;
@@ -103,7 +106,6 @@ body {
     height: 56px !important;
     background: none !important;
     flex-direction: row !important;
-    border: none !important;
     justify-content: stretch;
     align-items: stretch;
     gap: 0 !important;
@@ -134,7 +136,6 @@ body {
 .nav-link .home-icon {
   height: 24px;
   width: 24px;
-  vertical-align: middle;
   display: block;
 }
 
@@ -249,7 +250,7 @@ body {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  min-height: 320px;
+  min-height: 720px;
   height: 100%;
 }
 .mv-card-content {
@@ -669,6 +670,8 @@ body {
 .mv-card.open:hover {
   background: var(--azul-hover) !important;
   color: #fff !important;
+  transform: scale(1.04);
+  box-shadow: 0 4px 16px rgba(1,57,116,0.18);
 }
 .mv-card:hover h3,
 .mv-card:hover .mv-card-content,
@@ -757,3 +760,451 @@ body {
   transform: translateY(-16px);
 }
 /* --- END AJUSTE CARD VALORES --- */
+/* --- CARDS ACERCA DE --- */
+.acerca-cards-col {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: center;
+  margin-top: 24px;
+}
+.acerca-card {
+  background: var(--fondo-card);
+  border: 2px solid var(--azul-memi);
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(1,57,116,0.07);
+  padding: 24px 16px 16px 16px;
+  text-align: center;
+  width: 100%;
+  max-width: 340px;
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  transition: transform 0.2s, background 0.2s, box-shadow 0.2s;
+  flex: 1 1 0;
+  position: relative;
+}
+.acerca-card-desc {
+  color: var(--azul-memi);
+  font-size: 1em;
+  margin-top: 8px;
+  width: 100%;
+  text-align: center;
+  display: block;
+}
+.acerca-card.expand .acerca-card-desc {
+  display: none;
+}
+.acerca-card .acerca-card-content {
+  display: none;
+}
+.acerca-card.expand .acerca-card-content {
+  display: block !important;
+}
+.acerca-card.expand {
+  background: var(--azul-footer) !important;
+  color: #fff !important;
+}
+.acerca-card.expand h3,
+.acerca-card.expand .acerca-card-content,
+.acerca-card.expand .fase-text,
+.acerca-card.expand .acerca-card-desc {
+	color: #fff !important;
+}
+.acerca-card.expand .acerca-icon {
+	filter: brightness(0) invert(1);
+}
+
+.acerca-card.expand .fase-img {
+  filter: none !important;
+}
+.acerca-icon {
+  width: 56px;
+  height: 56px;
+  margin-bottom: 12px;
+  display: block;
+}
+.acerca-card h3 {
+  margin: 12px 0 8px 0;
+  color: var(--azul-memi);
+  font-size: 1.1em;
+  letter-spacing: 1px;
+  width: 100%;
+  text-align: center;
+}
+.acerca-card-content {
+  color: var(--azul-memi);
+  font-size: 1em;
+  margin-top: 8px;
+  width: 100%;
+  text-align: left;
+  display: none;
+}
+
+.acerca-card.expand .acerca-card-content {
+  display: block !important;
+}
+.acerca-card:hover {
+  background: var(--azul-memi);
+  color: #fff;
+  transform: scale(1.04);
+  box-shadow: 0 4px 16px rgba(1,57,116,0.18);
+}
+.acerca-card:hover h3,
+.acerca-card:hover .acerca-card-content,
+.acerca-card:hover .acerca-card-desc {
+  color: #fff !important;
+}
+.acerca-card:hover .acerca-icon {
+  filter: brightness(0) invert(1);
+}
+.acerca-card:hover .fase-img {
+  filter: brightness(0) invert(1);
+}
+@media (max-width: 600px) {
+  .acerca-card {
+    max-width: 98vw;
+    padding: 24px 8px 16px 8px;
+  }
+}
+@media (min-width: 900px) {
+  .acerca-cards-col {
+    flex-direction: row;
+    justify-content: center;
+    align-items: stretch;
+    gap: 32px;
+  }
+  .acerca-card {
+    max-width: 340px;
+    flex: 1 1 0;
+  }
+}
+/* --- END CARDS ACERCA DE --- */
+/* --- ACERCA DE: IGUAL TAMAÑO QUE MV CARDS (FORZADO) --- */
+.acerca-card {
+  min-height: 720px;
+  max-width: 340px;
+  padding: 24px 16px 16px 16px;
+  box-sizing: border-box;
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  height: 100%;
+}
+@media (max-width: 767.98px) {
+  .acerca-card {
+    min-height: 220px;
+    max-width: 100%;
+  }
+}
+/* --- END ACERCA DE: IGUAL TAMAÑO QUE MV CARDS (FORZADO) --- */
+/* --- ACERCA DE: ALTURA EXACTA Y TÍTULO CENTRADO/COLOR --- */
+.acerca-cards-col {
+  align-items: stretch !important;
+}
+.acerca-card {
+  height: 100%;
+  min-height: 720;
+  max-width: 340px;
+  padding: 24px 16px 16px 16px;
+  box-sizing: border-box;
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+@media (max-width: 767.98px) {
+  .acerca-card {
+    min-height: 220px;
+    max-width: 100%;
+  }
+}
+#acerca-de h2 {
+  color: var(--azul-footer) !important;
+  text-align: center;
+}
+/* --- END ACERCA DE: ALTURA EXACTA Y TÍTULO CENTRADO/COLOR --- */
+/* --- ACERCA DE: CENTRADO TOTAL DE CARDS --- */
+
+/* --- ACERCA DE: EXPANDIBLE Y FASES --- */
+.acerca-cards-col {
+  position: relative;
+  transition: all 0.4s cubic-bezier(.4,0,.2,1);
+}
+.acerca-card.expand {
+  position: relative;
+  z-index: 10;
+  width: 100% !important;
+  max-width: 100vw !important;
+  min-width: 0 !important;
+  min-height: 80vh !important;
+  height: auto !important;
+  box-shadow: 0 8px 32px rgba(1,57,116,0.18);
+  margin-bottom: 32px;
+  animation: expandCard 0.4s cubic-bezier(.4,0,.2,1);
+}
+.acerca-card.minimizar {
+  cursor: pointer;
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  width: 32px;
+  height: 32px;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(1,57,116,0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5em;
+  color: var(--azul-memi);
+  border: none;
+  z-index: 20;
+  transition: background 0.2s;
+}
+.acerca-card.minimizar:hover {
+  background: var(--gris-hover);
+}
+.acerca-cards-col.expanded {
+  flex-direction: column !important;
+  align-items: stretch !important;
+}
+.acerca-card:not(.expand) {
+  transition: all 0.4s cubic-bezier(.4,0,.2,1);
+}
+.acerca-card.hide {
+  opacity: 0.7;
+  filter: blur(1.5px);
+  transform: scale(0.98);
+  pointer-events: none;
+}
+.acerca-card.moved {
+  margin-top: 16px;
+}
+
+/* Fases layout */
+.antecedentes-fases {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  margin-top: 16px;
+}
+.fase-row {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  justify-content: center;
+}
+.fase-img.left {
+  order: 0;
+}
+.fase-img.right {
+  order: 1;
+}
+.fase-text {
+  max-width: 600px;
+  text-align: left;
+  font-size: 1.05em;
+  color: var(--azul-memi);
+}
+@media (max-width: 900px) {
+  .fase-row {
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-start;
+  }
+  .fase-img.left, .fase-img.right {
+    order: 0;
+  }
+  .fase-text {
+    max-width: 100%;
+    text-align: left;
+  }
+}
+.fase-img {
+  width: 90px;
+  height: 90px;
+  object-fit: contain;
+  border-radius: 12px;
+  background: #f4f4f4;
+  box-shadow: 0 2px 8px rgba(1,57,116,0.07);
+}
+
+/* Fade-in animación al hacer scroll */
+.fadein-on-scroll {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.7s cubic-bezier(.4,0,.2,1), transform 0.7s cubic-bezier(.4,0,.2,1);
+}
+.fadein-on-scroll.visible {
+  opacity: 1;
+  transform: none;
+}
+
+@keyframes expandCard {
+  from {
+    transform: scale(0.98);
+    opacity: 0.7;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+.acerca-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.acerca-card h3 {
+  width: 100%;
+  text-align: center;
+  margin: 16px 0 8px 0;
+  color: var(--azul-memi);
+  font-size: 1.2em;
+  letter-spacing: 1px;
+}
+.acerca-icon {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 8px;
+}
+.acerca-card-content {
+  width: 100%;
+  text-align: center;
+  margin-top: 8px;
+  color: var(--azul-memi);
+  font-size: 1em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+/* --- END ACERCA DE: CENTRADO TOTAL DE CARDS --- */
+/* --- ALTURA FIJA DE 400PX EN CARDS MV Y ACERCA DE --- */
+.mv-card,
+.acerca-card {
+  min-height: 400px !important;
+  height: 400px !important;
+  max-height: 400px !important;
+}
+@media (max-width: 767.98px) {
+  .mv-card,
+  .acerca-card {
+    min-height: 400px !important;
+    height: 400px !important;
+    max-height: 400px !important;
+  }
+}
+/* --- END ALTURA FIJA DE 400PX EN CARDS MV Y ACERCA DE --- */
+/* --- Ajuste para cards abiertos --- */
+.acerca-cards-col.expanded .acerca-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.acerca-card.expand {
+  order: -1; /* Mover el card abierto al principio */
+  margin-bottom: 25px;
+}
+.acerca-card.moved {
+  order: 0; /* Mantener los otros cards debajo */
+  margin: 25px auto;
+  padding: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.acerca-card.hide {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* --- Ajuste dinámico del tamaño del card abierto --- */
+.acerca-card.expand {
+  max-height: none; /* Permitir que el tamaño se ajuste dinámicamente */
+  height: auto; /* Ajustar automáticamente al contenido */
+  overflow: visible; /* Asegurar que todo el contenido sea visible */
+}
+.acerca-card.expand .acerca-card-content {
+  max-height: none; /* Eliminar restricciones de altura */
+  height: auto; /* Ajustar automáticamente al contenido */
+  overflow: visible; /* Asegurar que todo el contenido sea visible */
+}
+/* --- Ajuste responsivo para contenido dentro del card abierto --- */
+.acerca-card.expand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  height: auto; /* Ajustar automáticamente al contenido */
+  max-height: none; /* Eliminar restricciones de altura */
+  overflow: hidden; /* Evitar que el contenido se salga del área del card */
+  padding: 16px; /* Asegurar espacio interno adecuado */
+  box-sizing: border-box; /* Incluir padding en el tamaño total */
+}
+.acerca-card.expand .acerca-card-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  height: auto; /* Ajustar automáticamente al contenido */
+  max-height: none; /* Eliminar restricciones de altura */
+  overflow: visible; /* Asegurar que todo el contenido sea visible */
+}
+.acerca-card.expand img {
+  max-width: 100%; /* Asegurar que las imágenes no excedan el ancho del card */
+  height: auto; /* Mantener proporción de las imágenes */
+}
+.acerca-card.expand p, .acerca-card.expand ul {
+  word-wrap: break-word; /* Evitar que el texto se desborde */
+  text-align: center; /* Centrar el texto para mejor presentación */
+}
+
+/* --- Ajuste final para altura dinámica y contenido completo --- */
+.acerca-card.expand {
+  height: auto; /* Ajustar automáticamente al contenido */
+  max-height: none; /* Eliminar restricciones de altura */
+  overflow: visible; /* Asegurar que todo el contenido sea visible */
+  padding: 16px; /* Espaciado interno para evitar desbordes */
+  box-sizing: border-box; /* Incluir padding en el tamaño total */
+}
+.acerca-card.expand .acerca-card-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  height: auto; /* Ajustar automáticamente al contenido */
+  max-height: none; /* Eliminar restricciones de altura */
+  overflow: visible; /* Asegurar que todo el contenido sea visible */
+}
+.acerca-card.expand img {
+  max-width: 100%; /* Asegurar que las imágenes no excedan el ancho del card */
+  height: auto; /* Mantener proporción de las imágenes */
+}
+.acerca-card.expand p, .acerca-card.expand ul {
+  word-wrap: break-word; /* Evitar que el texto se desborde */
+  text-align: center; /* Centrar el texto para mejor presentación */
+}
+
+/* Ajuste para altura dinámica de cards abiertos */
+@media (max-width: 767.98px) {
+  .mv-card.open .mv-card-content {
+    max-height: 600px; /* Ajuste para dispositivos móviles */
+  }
+}
+
+@media (min-width: 768px) {
+  .mv-card.open .mv-card-content {
+    max-height: 800px; /* Ajuste para pantallas más grandes */
+  }
+}
