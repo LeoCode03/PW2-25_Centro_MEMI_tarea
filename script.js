@@ -6,18 +6,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const homeLogoLink = document.getElementById('home-link-logo');
 
     const switchSection = (targetId) => {
-        // Ocultar todas las secciones
         contentSections.forEach(section => {
             section.style.display = 'none';
         });
 
-        // Mostrar la sección correcta
         const targetSection = document.getElementById(targetId);
         if (targetSection) {
             targetSection.style.display = 'block';
         }
 
-        // Actualizar el estado activo de los botones
         navLinks.forEach(link => {
             if (link.dataset.target === targetId) {
                 link.classList.add('active');
@@ -31,7 +28,6 @@ document.addEventListener('DOMContentLoaded', () => {
         link.addEventListener('click', () => {
             const targetId = link.dataset.target;
             switchSection(targetId);
-            // Ocultar el menú después de hacer clic en un enlace (en móvil)
             if (window.innerWidth < 768) {
                 navLinksContainer.classList.remove('show');
             }
@@ -43,12 +39,22 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     homeLogoLink.addEventListener('click', (e) => {
-        e.preventDefault(); // Evita que el enlace recargue la página
+        e.preventDefault(); 
         switchSection('home');
     });
 
-    // Mostrar la sección 'home' por defecto al cargar la página
+    
     switchSection('home');
+
+    
+    const mvCards = document.querySelectorAll('.mv-card');
+    mvCards.forEach(card => {
+        card.addEventListener('click', function (e) {
+            if (e.target.closest('.mv-card-content')) return;
+            mvCards.forEach(c => { if (c !== card) c.classList.remove('open'); });
+            card.classList.toggle('open');
+        });
+    });
 
     // Lógica para la sección de Publicaciones
     const togglePublicacionesBtn = document.getElementById('toggle-publicaciones');
@@ -104,11 +110,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     if (maxSlides > 0) {
-        showSlide(currentSlide); // Mostrar la primera diapositiva
+        showSlide(currentSlide); 
         prevBtn.addEventListener('click', prevSlide);
         nextBtn.addEventListener('click', nextSlide);
-
-        // Opcional: Cambio automático de diapositivas
-        // setInterval(nextSlide, 5000); // Cambia de slide cada 5 segundos
     }
 });
