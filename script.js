@@ -47,13 +47,25 @@ document.addEventListener('DOMContentLoaded', () => {
     switchSection('home');
 
     
+    // Lógica para los cards de Misión, Visión y Valores
     const mvCards = document.querySelectorAll('.mv-card');
+    document.addEventListener('click', function (e) {
+      // Cerrar todos si se hace clic fuera de cualquier card
+      if (!e.target.closest('.mv-card')) {
+        mvCards.forEach(card => card.classList.remove('open'));
+      }
+    });
     mvCards.forEach(card => {
-        card.addEventListener('click', function (e) {
-            if (e.target.closest('.mv-card-content')) return;
-            mvCards.forEach(c => { if (c !== card) c.classList.remove('open'); });
-            card.classList.toggle('open');
-        });
+      card.addEventListener('click', function (e) {
+        if (e.target.closest('.mv-card-content')) return;
+        // Si ya está abierto, ciérralo
+        if (card.classList.contains('open')) {
+          card.classList.remove('open');
+        } else {
+          mvCards.forEach(c => { if (c !== card) c.classList.remove('open'); });
+          card.classList.add('open');
+        }
+      });
     });
 
     // Lógica para la sección de Publicaciones
