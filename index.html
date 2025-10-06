@@ -25,9 +25,7 @@
     <!-- NAVBAR -->
     <nav class="navbar">
         <div class="nav-container">
-            <!-- Botón hamburguesa -->
             <button class="nav-toggle w3-button w3-large" id="nav-toggle">&#9776;</button>
-            <!-- Menú de navegación -->
             <ul class="nav-menu w3-ul responsive-navbar" id="nav-menu">
                 <li><a href="#" class="nav-link" data-section="inicio">Inicio</a></li>
                 <li><a href="#" class="nav-link" data-section="mvv">Misión, Visión y Valores</a></li>
@@ -43,8 +41,129 @@
 
     <!-- CONTENIDO PRINCIPAL -->
     <main class="w3-container w3-padding-16" id="main-content">
-        <h1>Bienvenido a mi Web</h1>
-        <p>Selecciona una opción del menú para ver su contenido.</p>
+        <!-- INICIO -->
+        <section id="inicio" class="section">
+            <h1>Bienvenido a mi Web</h1>
+            <p>Selecciona una opción del menú para ver su contenido.</p>
+        </section>
+
+        <!-- Misión, Visión y Valores -->
+        <section id="mvv" class="section" style="display:none">
+            <h1>Misión, Visión y Valores</h1>
+            
+            <div class="cards-container">
+                <div class="card w3-card-4">
+                    <div class="card-header">
+                        <img src="images/icon-MISION.png" alt="Misión">
+                        <h3 class="card-title">Misión</h3>
+                    </div>
+                    <div class="card-content">
+                        <p>Brindar cursos especializados, asesoramiento y elaboración de textos de apoyo a profesionales de las áreas de Matemáticas e Informática tanto de Universidad como de Colegio, orientados al mejoramiento de su enseñanza y aprendizaje.</p>
+                    </div>
+                </div>
+
+                <div class="card w3-card-4">
+                    <div class="card-header">
+                        <img src="images/icon-VISION.png" alt="Visión">
+                        <h3 class="card-title">Visión</h3>
+                    </div>
+                    <div class="card-content">
+                        <p>Ser un Centro de apoyo de referencia en la enseñanza de la Matemática y la Informática en nuestra comunidad, tanto para profesionales universitarios, profesores de colegio y estudiantes.</p>
+                    </div>
+                </div>
+
+                <div class="card w3-card-4">
+                    <div class="card-header">
+                        <img src="images/icon-VALORES.png" alt="Valores">
+                        <h3 class="card-title">Valores</h3>
+                    </div>
+                    <div class="card-content">
+                        <p>Nuestros valores son:</p>
+                        <ul>
+                            <li>Respeto</li>
+                            <li>Colaboración</li>
+                            <li>Compromiso</li>
+                            <li>Responsabilidad</li>
+                            <li>Confianza</li>
+                            <li>Trabajo en equipo</li>
+                            <li>Espíritu crítico</li>
+                            <li>Innovación</li>
+                            <li>Creatividad</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Acerca de -->
+        <section id="acerca" class="section" style="display:none">
+            <h1>Acerca de</h1>
+            
+            <div class="cards-container">
+                <div class="card w3-card-4">
+                    <div class="card-header">
+                        <img src="images/icon-ANTECEDENTES.png" alt="Historia">
+                        <h3 class="card-title">Antecedentes</h3>
+                    </div>
+                    <div class="card-content">
+                        <img src="images/icon-FASE1.png" alt="Fase 1 MEMI">  
+                        <p>En enero de 1991 inició sus actividades el Programa de Mejoramiento de la Enseñanza de la Matemática e Informática (MEMI), con el objetivo de mejorar la educación en las áreas de Matemática e Informática de la Facultad de Ciencias y Tecnología en la Universidad Mayor de San Simón. El Proyecto cubrió tres áreas: Matemáticas a nivel universitario, Matemáticas a nivel ciclo medio e Informática a nivel universitario. </p>
+                        <img src="images/icon-FASE2.png" alt="Fase 2 MEMI">  
+                        <p>La segunda fase del Programa MEMI abarca el período 1994-1997, en la cual se destacan los primeros posgrados de San Simón, en áreas de Matemática e Informática. </p>
+                        <img src="images/icon-FASE3.png" alt="Fase 3 MEMI">  
+                        <p>Finalmente, la tercera fase abarca el período 1999-2003. Su tarea fundamental, en base al compromiso asumido con los cooperantes holandeses (NUFFIC y la Universidad de Utrecht), fue garantizar la sostenibilidad de las actividades de este Programa. </p>
+                        <img src="images/icon-FASE4.png" alt="Fase 4 MEMI">  
+                        <p>A partir del 2010, mediante Resolución Rectoral N° 389/10, el Programa MEMI adopta la denominación de Centro de Mejoramiento de la Enseñanza de la Matemática e Informática (Centro MEMI).</p>
+                    </div>
+                </div>
+
+                <div class="card w3-card-4">
+                    <div class="card-header">
+                        <img src="images/icon-AUTORIDADES.png" alt="Equipo">
+                        <h3 class="card-title">Autoridades</h3>
+                    </div>
+                    <div class="card-content">
+                        <p>Contamos con docentes y técnicos especializados en informática y tecnología, comprometidos con la excelencia académica y la innovación educativa.</p>
+                    </div>
+                </div>
+
+                <div class="card w3-card-4">
+                    <div class="card-header">
+                        <img src="images/icon-ORGANIGRAMA.png" alt="Infraestructura">
+                        <h3 class="card-title">Ornigrama</h3>
+                    </div>
+                    <div class="card-content">
+                        <img src="images/ORGANIGRAMA.png" alt="Ornigrama memi">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Otras secciones -->
+        <section id="cursos" class="section" style="display:none">
+            <h1>Cursos y Seminarios</h1>
+            <p>Explora nuestra oferta de formación en tecnología e informática.</p>
+        </section>
+
+        <section id="servicios" class="section" style="display:none">
+            <h1>Servicios</h1>
+            <p>Ofrecemos consultorías, capacitaciones y desarrollo de software.</p>
+        </section>
+
+        <section id="icpc" class="section" style="display:none">
+            <h1>ICPC UMSS</h1>
+            <p>Apoyamos a los estudiantes que participan en la competencia ICPC.</p>
+        </section>
+
+        <section id="contacto" class="section" style="display:none">
+            <h1>Contacto</h1>
+            <p>Escríbenos a <a href="mailto:memi@fcyt.umss.edu.bo">memi@fcyt.umss.edu.bo</a></p>
+        </section>
+
+        <section id="publicaciones" class="section" style="display:none">
+            <h1>Publicaciones</h1>
+            <p>Consulta nuestras investigaciones y documentos técnicos.</p>
+        </section>
     </main>
 
     <!-- FOOTER -->
