@@ -1,178 +1,67 @@
-document.addEventListener('DOMContentLoaded', () => {
-    // --- Card Expand/Collapse Logic ---
-    const acercaCardsCol = document.querySelector('.acerca-cards-col');
-    const acercaCards = document.querySelectorAll('.acerca-card');
+document.addEventListener("DOMContentLoaded", () => {
+    const toggle = document.getElementById("nav-toggle");
+    const menu = document.getElementById("nav-menu");
+    const links = document.querySelectorAll(".nav-link");
+    const mainContent = document.getElementById("main-content");
 
-    let expandedCard = null;
-
-    acercaCards.forEach(card => {
-        card.addEventListener('click', function () {
-            if (card.classList.contains('expand')) {
-                // Collapse the expanded card
-                acercaCardsCol.classList.remove('expanded');
-                acercaCards.forEach(c => c.classList.remove('expand', 'hide', 'moved'));
-                return;
-            }
-
-            // Expand the clicked card
-            acercaCardsCol.classList.add('expanded');
-            acercaCards.forEach(c => {
-                c.classList.remove('expand', 'hide', 'moved');
-                if (c !== card) c.classList.add('hide');
-            });
-            card.classList.add('expand');
-
-            // Adjust other cards below
-            setTimeout(() => {
-                acercaCards.forEach(c => {
-                    if (c !== card) c.classList.remove('hide');
-                    if (c !== card) c.classList.add('moved');
-                });
-            }, 400);
-        });
+    // Menú hamburguesa
+    toggle.addEventListener("click", () => {
+        menu.classList.toggle("active");
     });
 
-    // --- Fade-in Animation on Scroll ---
-    function handleFadeInOnScroll() {
-        const fadeEls = document.querySelectorAll('.fadein-on-scroll');
-        const trigger = window.innerHeight * 0.92;
-
-        fadeEls.forEach(el => {
-            const rect = el.getBoundingClientRect();
-            if (rect.top < trigger) {
-                el.classList.add('visible');
-            }
-        });
-    }
-
-    window.addEventListener('scroll', handleFadeInOnScroll);
-    setTimeout(handleFadeInOnScroll, 300);
-
-    // --- Navigation Logic ---
-    const hamburgerMenu = document.getElementById('hamburger-menu');
-    const navLinksContainer = document.getElementById('nav-links-container');
-    const navLinks = document.querySelectorAll('.nav-link');
-    const contentSections = document.querySelectorAll('.content-section');
-    const homeLogoLink = document.getElementById('home-link-logo');
-
-    const switchSection = (targetId) => {
-        contentSections.forEach(section => {
-            section.style.display = 'none';
-        });
-
-        const targetSection = document.getElementById(targetId);
-        if (targetSection) {
-            targetSection.style.display = 'block';
-        }
-
-        navLinks.forEach(link => {
-            if (link.dataset.target === targetId) {
-                link.classList.add('active');
-            } else {
-                link.classList.remove('active');
-            }
-        });
+    // Contenidos de ejemplo (puedes modificarlos libremente)
+    const contenidos = {
+        inicio: `
+            <h1>Inicio</h1>
+            <p>Bienvenido al Centro MEMI. Aquí encontrarás información general.</p>
+        `,
+        mvv: `
+            <h1>Misión, Visión y Valores</h1>
+            <p>Nuestra misión es impulsar la innovación tecnológica y el aprendizaje.</p>
+        `,
+        acerca: `
+            <h1>Acerca de</h1>
+            <p>El Centro MEMI es una unidad académica de la FCyT - UMSS.</p>
+        `,
+        cursos: `
+            <h1>Cursos y Seminarios</h1>
+            <p>Explora nuestra oferta de formación en tecnología e informática.</p>
+        `,
+        servicios: `
+            <h1>Servicios</h1>
+            <p>Ofrecemos consultorías, capacitaciones y desarrollo de software.</p>
+        `,
+        icpc: `
+            <h1>ICPC UMSS</h1>
+            <p>Apoyamos a los estudiantes que participan en la competencia ICPC.</p>
+        `,
+        contacto: `
+            <h1>Contacto</h1>
+            <p>Escríbenos a <a href="mailto:memi@fcyt.umss.edu.bo">memi@fcyt.umss.edu.bo</a></p>
+        `,
+        publicaciones: `
+            <h1>Publicaciones</h1>
+            <p>Consulta nuestras investigaciones y documentos técnicos.</p>
+        `
     };
 
-    navLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            const targetId = link.dataset.target;
-            switchSection(targetId);
-            if (window.innerWidth < 768) {
-                navLinksContainer.classList.remove('show');
-            }
+    // Acción al hacer clic en un enlace
+    links.forEach(link => {
+        link.addEventListener("click", (e) => {
+            e.preventDefault();
+
+            // Quitar color rojo previo
+            links.forEach(l => l.classList.remove("active"));
+
+            // Activar el botón actual
+            link.classList.add("active");
+
+            // Mostrar contenido correspondiente
+            const section = link.getAttribute("data-section");
+            mainContent.innerHTML = contenidos[section] || "<h1>Sección no encontrada</h1>";
+            
+            // Cerrar el menú (solo en móvil)
+            menu.classList.remove("active");
         });
     });
-
-    hamburgerMenu.addEventListener('click', () => {
-        navLinksContainer.classList.toggle('show');
-    });
-
-    homeLogoLink.addEventListener('click', (e) => {
-        e.preventDefault();
-        switchSection('home');
-    });
-
-    switchSection('home');
-
-    // --- Mission, Vision, and Values Cards Logic ---
-    const mvCards = document.querySelectorAll('.mv-card');
-
-    document.addEventListener('click', function (e) {
-        if (!e.target.closest('.mv-card')) {
-            mvCards.forEach(card => card.classList.remove('open'));
-        }
-    });
-
-    mvCards.forEach(card => {
-        card.addEventListener('click', function (e) {
-            if (e.target.closest('.mv-card-content')) return;
-
-            if (card.classList.contains('open')) {
-                card.classList.remove('open');
-            } else {
-                mvCards.forEach(c => { if (c !== card) c.classList.remove('open'); });
-                card.classList.add('open');
-            }
-        });
-    });
-
-    // --- Publications Section Logic ---
-    const togglePublicacionesBtn = document.getElementById('toggle-publicaciones');
-    const listaPublicaciones = document.getElementById('lista-publicaciones');
-    const openPdfFormBtn = document.getElementById('open-pdf-form');
-    const openNewsFormBtn = document.getElementById('open-news-form');
-    const pdfUploadForm = document.getElementById('pdf-upload-form');
-    const newsUploadForm = document.getElementById('news-upload-form');
-    const cancelButtons = document.querySelectorAll('.cancel-btn');
-
-    togglePublicacionesBtn.addEventListener('click', () => {
-        const isVisible = listaPublicaciones.style.display === 'block';
-        listaPublicaciones.style.display = isVisible ? 'none' : 'block';
-    });
-
-    const openForm = (formToShow) => {
-        pdfUploadForm.style.display = 'none';
-        newsUploadForm.style.display = 'none';
-        formToShow.style.display = 'block';
-    };
-
-    openPdfFormBtn.addEventListener('click', () => openForm(pdfUploadForm));
-    openNewsFormBtn.addEventListener('click', () => openForm(newsUploadForm));
-
-    cancelButtons.forEach(btn => {
-        btn.addEventListener('click', () => {
-            pdfUploadForm.style.display = 'none';
-            newsUploadForm.style.display = 'none';
-        });
-    });
-
-    // --- Carousel Logic ---
-    let currentSlide = 0;
-    const slides = document.querySelectorAll('.carousel-slide');
-    const prevBtn = document.querySelector('.carousel-control.prev');
-    const nextBtn = document.querySelector('.carousel-control.next');
-    const maxSlides = slides.length;
-
-    function showSlide(index) {
-        slides.forEach((slide, i) => {
-            slide.style.display = (i === index) ? 'block' : 'none';
-        });
-    }
-
-    function nextSlide() {
-        currentSlide = (currentSlide + 1) % maxSlides;
-        showSlide(currentSlide);
-    }
-
-    function prevSlide() {
-        currentSlide = (currentSlide - 1 + maxSlides) % maxSlides;
-        showSlide(currentSlide);
-    }
-
-    if (maxSlides > 0) {
-        showSlide(currentSlide);
-        prevBtn.addEventListener('click', prevSlide);
-        nextBtn.addEventListener('click', nextSlide);
-    }
 });

@@ -4,269 +4,66 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Centro MEMI</title>
-    <!-- Link to external stylesheet -->
+
+    <!-- W3.CSS -->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+    <!-- Estilos propios -->
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Header Section -->
-    <header class="header">
+
+    <!-- HEADER -->
+    <header class="header w3-padding-small">
         <a href="#" id="home-link-logo">
             <img src="images/logo-MEMI.png" alt="Logo MEMI" class="logo">
         </a>
-        <h1 class="header-title">CENTRO MEMI</h1>
+        <h1 class="titulo-header"><strong>CENTRO MEMI</strong></h1>
         <img src="images/logo-FCYT.png" alt="Logo FCYT" class="logo">
     </header>
 
-    <!-- Navigation Bar -->
+    <!-- NAVBAR -->
     <nav class="navbar">
-        <button class="hamburger-menu" id="hamburger-menu">
-            <span class="hamburger-bar"></span>
-            <span class="hamburger-bar"></span>
-            <span class="hamburger-bar"></span>
-        </button>
-        <div class="nav-links-container" id="nav-links-container">
-            <button class="nav-link" data-target="home">
-                <img src="images/icon-HOME.png" alt="Home" class="home-icon">
-            </button>
-            <button class="nav-link" data-target="mision-vision">Misión, Visión y Valores</button>
-            <button class="nav-link" data-target="acerca-de">Acerca de</button>
-            <button class="nav-link" data-target="cursos">Cursos y Seminarios</button>
-            <button class="nav-link" data-target="servicios">Servicios</button>
-            <button class="nav-link" data-target="icpc">ICPC UMSS</button>
-            <button class="nav-link" data-target="contacto-nav">Contacto</button>
-            <button class="nav-link" data-target="publicaciones">Publicaciones</button>
+        <div class="nav-container">
+            <!-- Botón hamburguesa -->
+            <button class="nav-toggle w3-button w3-large" id="nav-toggle">&#9776;</button>
+            <!-- Menú de navegación -->
+            <ul class="nav-menu w3-ul responsive-navbar" id="nav-menu">
+                <li><a href="#" class="nav-link" data-section="inicio">Inicio</a></li>
+                <li><a href="#" class="nav-link" data-section="mvv">Misión, Visión y Valores</a></li>
+                <li><a href="#" class="nav-link" data-section="acerca">Acerca de</a></li>
+                <li><a href="#" class="nav-link" data-section="cursos">Cursos y Seminarios</a></li>
+                <li><a href="#" class="nav-link" data-section="servicios">Servicios</a></li>
+                <li><a href="#" class="nav-link" data-section="icpc">ICPC UMSS</a></li>
+                <li><a href="#" class="nav-link" data-section="contacto">Contacto</a></li>
+                <li><a href="#" class="nav-link" data-section="publicaciones">Publicaciones</a></li>
+            </ul>
         </div>
     </nav>
 
-    <!-- Main Content -->
-    <main class="main-content">
-        <!-- Home Section -->
-        <section id="home" class="content-section">
-            <h2 class="section-title">Últimas Noticias</h2>
-            <div class="carousel-container">
-                <div class="carousel-slide">
-                    <img src="images/placeholder-news.png" alt="Noticia 1">
-                    <div class="carousel-caption">
-                        <h3>Título de la Noticia 1</h3>
-                        <p>Resumen de la noticia 1...</p>
-                    </div>
-                </div>
-                <div class="carousel-slide" style="display: none;">
-                    <img src="images/placeholder-news.png" alt="Noticia 2">
-                    <div class="carousel-caption">
-                        <h3>Título de la Noticia 2</h3>
-                        <p>Resumen de la noticia 2...</p>
-                    </div>
-                </div>
-                <div class="carousel-slide" style="display: none;">
-                    <img src="images/placeholder-news.png" alt="Noticia 3">
-                    <div class="carousel-caption">
-                        <h3>Título de la Noticia 3</h3>
-                        <p>Resumen de la noticia 3...</p>
-                    </div>
-                </div>
-                <button class="carousel-control prev">&#10094;</button>
-                <button class="carousel-control next">&#10095;</button>
-            </div>
-        </section>
-
-        <!-- Misión, Visión y Valores Section -->
-        <section id="mision-vision" class="content-section" style="display: none;">
-            <h2>Misión, Visión y Valores</h2>
-            <div class="mv-cards-row">
-                <div class="mv-card" data-type="mision">
-                    <img src="images/icon-MISION.png" alt="Misión" class="mv-icon">
-                    <h3>MISIÓN</h3>
-                    <div class="mv-card-content">
-                        <p>Brindar cursos especializados, asesoramiento y elaboración de textos de apoyo a profesionales de las áreas de Matemáticas e Informática tanto de Universidad como de Colegio, orientados al mejoramiento de su enseñanza y aprendizaje.</p>
-                    </div>
-                </div>
-                <div class="mv-card" data-type="vision">
-                    <img src="images/icon-VISION.png" alt="Visión" class="mv-icon">
-                    <h3>VISIÓN</h3>
-                    <div class="mv-card-content">
-                        <p>Ser un Centro de apoyo de referencia en la enseñanza de la Matemática y la Informática en nuestra comunidad, tanto para profesionales universitarios, profesores de colegio y estudiantes.</p>
-                    </div>
-                </div>
-                <div class="mv-card" data-type="valores">
-                    <img src="images/icon-VALORES.png" alt="Valores" class="mv-icon">
-                    <h3>VALORES</h3>
-                    <div class="mv-card-content">
-                        <p>Nuestros valores son:</p>
-                        <ul>
-                            <li>Respeto</li>
-                            <li>Colaboración</li>
-                            <li>Compromiso</li>
-                            <li>Responsabilidad</li>
-                            <li>Confianza</li>
-                            <li>Trabajo en equipo</li>
-                            <li>Espíritu crítico</li>
-                            <li>Innovación</li>
-                            <li>Creatividad</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Acerca de Section -->
-        <section id="acerca-de" class="content-section" style="display: none;">
-            <h2>Acerca de</h2>
-            <div class="acerca-cards-col">
-                <div class="acerca-card" data-type="antecedentes">
-                    <img src="images/icon-ANTECEDENTES.png" alt="Antecedentes" class="acerca-icon">
-                    <h3>ANTECEDENTES</h3>
-                    <div class="acerca-card-desc">
-                        <p>Conoce la historia y evolución del Centro MEMI desde 1991 hasta la actualidad.</p>
-                    </div>
-                    <div class="acerca-card-content antecedentes-fases">
-                        <div class="fase-row fadein-on-scroll">
-                            <img src="images/icon-FASE1.png" alt="Fase 1" class="fase-img left">
-                            <div class="fase-text">
-                                <strong>Primera Fase (1991-1993):</strong>
-                                <p>En enero de 1991 inició sus actividades el Programa de Mejoramiento de la Enseñanza de la Matemática e Informática (MEMI), con el objetivo de mejorar la educación en las áreas de Matemática e Informática de la Facultad de Ciencias y Tecnología en la Universidad Mayor de San Simón. El Proyecto cubrió tres áreas: Matemáticas a nivel universitario, Matemáticas a nivel ciclo medio e Informática a nivel universitario.</p>
-                            </div>
-                        </div>
-                        <div class="fase-row fadein-on-scroll">
-                            <div class="fase-text">
-                                <strong>Segunda Fase (1994-1997):</strong>
-                                <p>La segunda fase del Programa MEMI abarca el período 1994-1997, en la cual se destacan los primeros posgrados de San Simón, en áreas de Matemática e Informática.</p>
-                            </div>
-                            <img src="images/icon-FASE2.png" alt="Fase 2" class="fase-img right">
-                        </div>
-                        <div class="fase-row fadein-on-scroll">
-                            <img src="images/icon-FASE3.png" alt="Fase 3" class="fase-img left">
-                            <div class="fase-text">
-                                <strong>Tercera Fase (1999-2003):</strong>
-                                <p>Finalmente, la tercera fase abarca el período 1999-2003. Su tarea fundamental, en base al compromiso asumido con los cooperantes holandeses (NUFFIC y la Universidad de Utrecht), fue garantizar la sostenibilidad de las actividades de este Programa.</p>
-                            </div>
-                        </div>
-                        <div class="fase-row fadein-on-scroll">
-                            <img src="images/icon-FASE4.png" alt="Fase 4" class="fase-img right">
-                            <div class="fase-text">
-                                <strong>Centro MEMI (2010 - Actualidad):</strong>
-                                <p>A partir del 2010, mediante Resolución Rectoral N° 389/10, el Programa MEMI adopta la denominación de Centro de Mejoramiento de la Enseñanza de la Matemática e Informática (Centro MEMI).</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="acerca-card" data-type="organigrama">
-                    <img src="images/icon-ORGANIGRAMA.png" alt="Organigrama" class="acerca-icon">
-                    <h3>ORGANIGRAMA</h3>
-                    <div class="acerca-card-desc">
-                        <p>Visualiza la estructura organizativa del Centro MEMI.</p>
-                    </div>
-                    <div class="acerca-card-content">
-                        <img src="images/ORGANIGRAMA.png" alt="Organigrama MEMI" style="width:100%;max-width:400px;display:block;margin:0 auto 16px auto;">
-                        <p>El organigrama del Centro MEMI muestra la estructura jerárquica y funcional de sus áreas y autoridades.</p>
-                    </div>
-                </div>
-                <div class="acerca-card" data-type="autoridades">
-                    <img src="images/icon-AUTORIDADES.png" alt="Autoridades" class="acerca-icon">
-                    <h3>AUTORIDADES</h3>
-                    <div class="acerca-card-desc">
-                        <p>Conoce a las autoridades y responsables actuales del Centro MEMI.</p>
-                    </div>
-                    <div class="acerca-card-content">
-                        <ul style="list-style:none;padding:0;text-align:left;max-width:400px;margin:0 auto;">
-                            <li><strong>Director:</strong> Dr. Juan Pérez</li>
-                            <li><strong>Coordinador Académico:</strong> Lic. María López</li>
-                            <li><strong>Responsable de Proyectos:</strong> Ing. Carlos Gómez</li>
-                            <li><strong>Secretaría:</strong> Sra. Ana Torres</li>
-                        </ul>
-                        <p>El equipo directivo del Centro MEMI está conformado por profesionales comprometidos con la excelencia educativa.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Cursos y Seminarios Section -->
-        <section id="cursos" class="content-section" style="display: none;">
-            <h2>Cursos y Seminarios</h2>
-        </section>
-
-        <!-- Servicios Section -->
-        <section id="servicios" class="content-section" style="display: none;">
-            <h2>Servicios</h2>
-        </section>
-
-        <!-- ICPC UMSS Section -->
-        <section id="icpc" class="content-section" style="display: none;">
-            <h2>ICPC UMSS</h2>
-        </section>
-
-        <!-- Contacto Section -->
-        <section id="contacto-nav" class="content-section" style="display: none;">
-            <h2>Contacto</h2>
-        </section>
-
-        <!-- Publicaciones Section -->
-        <section id="publicaciones" class="content-section" style="display: none;">
-            <div class="publicaciones-container">
-                <div class="publicaciones-col">
-                    <button class="toggle-button" id="toggle-publicaciones">Últimas Publicaciones</button>
-                    <div id="lista-publicaciones" class="toggle-content">
-                        <div class="pdf-card">
-                            <h4>Título del PDF 1</h4>
-                            <p>Breve descripción del documento...</p>
-                            <a href="#" target="_blank">Ver PDF</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="publicaciones-col">
-                    <button class="upload-button" id="open-pdf-form">Subir PDF</button>
-                    <button class="upload-button" id="open-news-form">Subir Nueva Noticia</button>
-                </div>
-            </div>
-            <div id="pdf-upload-form" class="upload-form" style="display: none;">
-                <h3>Subir Nuevo PDF</h3>
-                <form>
-                    <input type="text" placeholder="Título del PDF" required>
-                    <textarea placeholder="Descripción" required></textarea>
-                    <select required>
-                        <option value="" disabled selected>Seleccionar Tema</option>
-                        <option value="informatica">Informática</option>
-                        <option value="matematicas">Matemáticas</option>
-                    </select>
-                    <input type="file" accept=".pdf" required>
-                    <button type="submit">Guardar PDF</button>
-                    <button type="button" class="cancel-btn">Cancelar</button>
-                </form>
-            </div>
-            <div id="news-upload-form" class="upload-form" style="display: none;">
-                <h3>Crear Nueva Noticia</h3>
-                <form>
-                    <input type="text" placeholder="Título de la Noticia" required>
-                    <textarea placeholder="Resumen de la noticia" required></textarea>
-                    <textarea placeholder="Descripción completa" rows="5" required></textarea>
-                    <label>Foto para el carrusel:</label>
-                    <input type="file" accept="image/*" required>
-                    <button type="submit">Guardar Noticia</button>
-                    <button type="button" class="cancel-btn">Cancelar</button>
-                </form>
-            </div>
-        </section>
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="w3-container w3-padding-16" id="main-content">
+        <h1>Bienvenido a mi Web</h1>
+        <p>Selecciona una opción del menú para ver su contenido.</p>
     </main>
 
-    <!-- Footer Section -->
+    <!-- FOOTER -->
     <footer class="footer">
-        <div class="footer-columns">
-            <div class="footer-col">
-                <p>Teléfono: (+591) 4 4666037</p>
-                <p>E-mail: memi@fcyt.umss.edu.bo</p>
-                <p><a href="https://maps.app.goo.gl/5srt3FWma95Ww5mz8" target="_blank">Ubicación: Campus Central UMSS</a></p>
+        <div class="columnas-footer">
+            <div class="col-footer">
+                <p>📞 Teléfono: <a href="tel:+591444666037" target="_blank">(+591) 4 44666037</a></p>
+                <p>📧 E-mail: <a href="mailto:memi@fcyt.umss.edu.bo" target="_blank">memi@fcyt.umss.edu.bo</a></p>
+                <p>🏫 Ubicación: <a href="https://maps.app.goo.gl/5srt3FWma95Ww5mz8" target="_blank">Campus Central UMSS</a></p>
             </div>
-            <div class="footer-col">
-                <p><a href="https://www.facebook.com/memiumss/?locale=es_LA" target="_blank">Facebook: MEMI UMSS</a></p>
-                <p><a href="http://www.fcyt.umss.edu.bo" target="_blank">FCyT: Facultad de Ciencias y Tecnologia</a></p>
+            <div class="col-footer">
+                <p>💻 Facebook: <a href="https://www.facebook.com/memiumss/?locale=es_LA" target="_blank">MEMI UMSS</a></p>
+                <p>🌐 FCyT: <a href="http://www.fcyt.umss.edu.bo" target="_blank">Facultad de Ciencias y Tecnología</a></p>
             </div>
         </div>
-        <div class="footer-copyright">
-            <p>© 2025 Centro MEMI – Universidad Mayor de San Simón</p>
-        </div>
+        <p class="copyright">© 2025 Centro MEMI – Universidad Mayor de San Simón</p>
     </footer>
 
-    <!-- Link to external JavaScript file -->
+    <!-- SCRIPT -->
     <script src="script.js"></script>
 </body>
 </html>
