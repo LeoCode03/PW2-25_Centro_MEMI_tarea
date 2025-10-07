@@ -1,304 +1,1115 @@
-/* =====================================================
-    🌐 VARIABLES Y CONFIGURACIÓN GLOBAL
-===================================================== */
+/* ==========================================================================
+    1. Variables y Reset
+  ========================================================================== */
+
 :root {
-    --azul-umss: #013974;
-    --rojo-umss: #E00209;
-    --celeste-memi: #88e3da;
+  --azul-umss: #013974;
+  --rojo-umss: #E00209;
+  --celeste-memi: #88e3da;
+  
+  /* Variables de espaciado */
+  --spacing-xs: 5px;
+  --spacing-sm: 10px;
+  --spacing-md: 15px;
+  --spacing-lg: 20px;
+  --spacing-xl: 30px;
+  
+  /* Variables de sombras */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 8px 32px rgba(1, 57, 116, 0.3);
+  --shadow-xl: 0 12px 40px rgba(1, 57, 116, 0.4);
 }
 
-/* =====================
-    BASE GENERAL
-====================== */
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
+
+/* ==========================================================================
+   2. Componentes Base
+   ========================================================================== */
 
 body {
-    font-family: "Segoe UI", sans-serif;
-    background: #ffffff;
-    color: #000000;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+  font-family: "Segoe UI", sans-serif;
+  background: #ffffff;
+  color: #000000;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 main {
-    flex: 1;
+  flex: 1;
 }
 
 a {
-    text-decoration: none;
-    color: inherit;
+  text-decoration: none;
+  color: inherit;
 }
 
-/* =====================================================
-    📱 MOBILE FIRST (estilos base por defecto)
-===================================================== */
-
-/* =====================
-    HEADER
-====================== */
-.header {
-    background-color: var(--celeste-memi);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    text-align: center;
+.w3-container h1 {
+  color: var(--azul-umss);
+  font-family: 'Times New Roman', Times, serif;
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: var(--spacing-sm);
 }
 
-.header img {
-    height: 80px;
-    padding: 5px 10px;
-}
-
-.titulo-header {
-    font-size: 1.6rem;
-    font-family: 'Times New Roman', Times, serif; 
-}
-
-/* =====================
-    NAVBAR
-====================== */
-.navbar {
-    background-color: var(--azul-umss);
-    color: white;
-    position: sticky;
-    cursor: pointer;
-    top: 0;
-    z-index: 1000;
-}
-
-.nav-container {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-}
-
-.nav-toggle {
-    background: var(--azul-umss);
-    color: white;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-    text-align: left;
-}
-
-.nav-menu {
-    display: none;
-    background-color: var(--azul-umss);
-    flex-direction: column;
-    white-space: nowrap;
-    border-radius: 4px;
-    width: 100%;
-}
-
-.nav-menu.active {
-    display: flex;
-}
-
-.nav-menu li a {
-    display: block;
-    color: #fff;
-    padding: 14px 20px;
-    text-align: center;
-    border-radius: 4px;
-}
-
-.nav-menu li a:hover {
-    background-color: var(--celeste-memi);
-    color: #000;
-}
-
-.w3-container h1{
+.w3-container h2 {
   color: var(--azul-umss);
   font-family: 'Times New Roman', Times, serif;
   text-align: left;
   margin-top: 0 auto;
 }
 
-/* =====================
-    FOOTER
-====================== */
-.footer {
-    background-color: var(--azul-umss);
-    color: white;
-    padding: 15px 10px;
-    display: flex;
-    flex-direction: column;
+/* Botones */
+.btn-primary {
+  background-color: var(--azul-umss);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow-sm);
 }
 
-.footer a {
-    color: var(--celeste-memi);
+.btn-primary:hover {
+  background-color: var(--celeste-memi);
+  color: #000;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
 }
 
-.footer a:hover {
-    color: var(--rojo-umss);
+.btn-primary span {
+  margin-right: 8px;
 }
 
-.columnas-footer {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-self: center;
-    margin-bottom: 8px;
+.btn-ver {
+  background-color: var(--azul-umss);
+  color: white;
+  text-decoration: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  transition: background-color 0.3s;
 }
 
-.col-footer p {
-    margin: 4px ;
+.btn-ver:hover {
+  background-color: var(--celeste-memi);
+  color: #000;
 }
 
-.copyright {
-    margin-top: 8px;
-    font-size: 0.9rem;
-    color: #ddd;
-    text-align: center;
-    width: 100%;
+.btn-descargar {
+  background-color: var(--azul-umss);
+  color: white;
+  text-decoration: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease;
 }
 
-/* =====================
-    CARDS 
-====================== */
+.btn-descargar:hover {
+  background-color: var(--celeste-memi);
+  color: #000;
+}
+
+.btn-eliminar {
+  background-color: var(--rojo-umss);
+  color: white;
+  text-decoration: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-left: var(--spacing-sm);
+}
+
+.btn-eliminar:hover {
+  background-color: #ff3333;
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-sm);
+}
+
+.btn-eliminar span {
+  margin-right: 4px;
+}
+
+/* Mensajes vacíos */
+.mensaje-vacio {
+  text-align: center;
+  padding: 40px 20px;
+  color: #6c757d;
+  font-style: italic;
+}
+
+/* ==========================================================================
+   3. Layout y Estructura
+   ========================================================================== */
+
+/* Reducir espacio superior específicamente en servicios */
+#servicios h1 {
+  margin-bottom: 5px;
+}
+
+/* Contenedores de Cards */
 .cards-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-    padding: 20px;
-    margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  gap: var(--spacing-lg);
+  padding: var(--spacing-xs);
 }
 
+/* Layout específico para sección de servicios */
+#servicios .cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--spacing-sm) var(--spacing-lg);
+  align-items: start;
+}
+
+/* ==========================================================================
+   4. Header y Navegación
+   ========================================================================== */
+
+.header {
+  background-color: var(--celeste-memi);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.header img {
+  height: 80px;
+  padding: 5px 10px;
+}
+
+.titulo-header {
+  font-size: 1.6rem;
+  font-family: 'Times New Roman', Times, serif; 
+}
+
+/* Navbar */
+.navbar {
+  background-color: var(--azul-umss);
+  color: white;
+  position: sticky;
+  padding: 0;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.nav-toggle {
+  background: var(--azul-umss);
+  color: white;
+  border: none;
+  padding: var(--spacing-sm);
+  cursor: pointer;
+  text-align: left;
+  width: 100%;
+}
+
+.nav-menu {
+  display: none;
+  background-color: var(--azul-umss);
+  flex-direction: column;
+  width: 100%;
+}
+
+.nav-menu.active {
+  display: flex;
+}
+
+.nav-menu li a {
+  display: block;
+  color: #fff;
+  padding: 14px 20px;
+  text-align: center;
+}
+
+.nav-menu li a:hover {
+  background-color: var(--celeste-memi);
+  border-radius: 4px;
+  color: #000;
+}
+
+/* ==========================================================================
+   5. Cards - Diseño y Comportamiento
+   ========================================================================== */
+
+/* 5.1 Estilos Base de Cards */
 .card {
-    width: 100%;
-    background: white;
-    border-radius: 15px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    cursor: pointer;
-    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    overflow: hidden;
-    position: relative;
+  width: 100%;
+  max-width: 800px;
+  background: white;
+  border-radius: 16px;
+  box-shadow: var(--shadow-md);
+  cursor: pointer;
+  transition: all 0.4s ease;
+  overflow: hidden;
+  position: relative;
 }
 
 .card:hover {
   background-color: var(--celeste-memi);
   transform: translateY(-5px);
-  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+  box-shadow: var(--shadow-lg);
 }
 
 .card.active {
   width: 100%;
-    background-color: var(--azul-umss);
-    box-shadow: 0 12px 30px rgba(1, 57, 116, 0.3);
+  height: auto;
+  background-color: var(--azul-umss);
+  margin-bottom: var(--spacing-md);
 }
 
+/* Headers y títulos de Cards */
 .card-header {
-    padding: 20px;
-    text-align: center;
+  padding: var(--spacing-lg);
+  text-align: center;
 }
 
 .card img {
-    width: 80px;
-    height: 80px;
-    margin: 0 auto 15px;
-    display: block;
+  width: 80px;
+  height: 80px;
+  margin: 0 auto var(--spacing-md);
+  display: block;
 }
 
 .card.active img {
-    filter: brightness(0) invert(1);
+  filter: brightness(0) invert(1);
 }
 
 .card-title {
-    font-size: 1.2rem;
-    font-weight: bold;
-    margin: 0;
-    transition: all 0.4s ease;
-    color: var(--azul-umss);
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 0;
+  transition: all 0.4s ease;
+  color: var(--azul-umss);
 }
 
 .card.active .card-title {
-    color: white;
+  color: white;
 }
 
+/* Contenido de Cards */
 .card-content {
-    max-height: 0;
-    overflow: hidden;
-    transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  max-height: 0;
+  overflow: hidden;
+  margin-top: var(--spacing-xs);
+  transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .card.active .card-content {
-    max-height: 500px;
-    text-align: center;
-    transform: translateY(0);
-    padding: 20px;
+  max-height: none;
+  text-align: center;
+  transform: translateY(0);
+  padding: var(--spacing-lg);
 }
 
 .card-content p {
-    margin: 0 auto;
-    line-height: 1.6;
-    color: #fff;
+  margin: 0 auto;
+  line-height: 1.6;
+  color: #fff;
 }
 
 .card-content li {
-    margin: 0 auto;
-    line-height: 1.5;
-    list-style: none;
-    color: #fff;
+  margin: 0 auto;
+  line-height: 1.5;
+  color: #fff;
+  list-style: none;
 }
 
-/* =====================
-        "ACERCA" 
-====================== */
+/* 5.2 Cards Sección Acerca */
+#acerca .cards-container {
+  overflow: visible;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
 
-#acerca .cards-container.has-active-card {
-    flex-direction: column;
-    align-items: stretch;
+#acerca .card {
+  transition: all 0.4s ease;
+}
+
+#acerca .card-header {
+  padding: var(--spacing-md) var(--spacing-lg) var(--spacing-xs) var(--spacing-lg);
 }
 
 #acerca .card.active {
-    width: 100% !important;
-    max-width: none !important;
-    margin-bottom: 30px;
-    transform: none !important;
-    order: -1;
-}
-
-#acerca .cards-container.has-active-card .card:not(.active) {
-    order: 1;
-    align-self: center;
-    max-width: 300px;
+  margin: 0 auto var(--spacing-xl) auto !important;
+  width: calc(100vw - 40px) !important;
+  max-width: calc(100vw - 40px) !important;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  box-shadow: var(--shadow-lg);
 }
 
 #acerca .card.active .card-content {
-    padding: 30px;
-    max-height: none;
+  padding: var(--spacing-xl) var(--spacing-lg) var(--spacing-lg) var(--spacing-lg);
+  max-height: none;
+  margin-top: -10px;
 }
 
 #acerca .card-content img {
-    width: 60px;
-    max-width: auto;
-    height: auto;
-    margin: 15px auto;
-    display: block;
+  width: 60px;
+  max-width: auto;
+  height: auto;
+  margin: var(--spacing-md) auto;
+  display: block;
 }
 
 #acerca .card-content img[src*="images/ORGANIGRAMA.png"] {
-    width: 100%;
-    height: 100%;
-    margin: 20px auto;
-    border: 2px solid var(--azul-umss);
-    border-radius: 10px;
-    box-shadow: 0 6px 20px rgba(1, 57, 116, 0.2);
-    padding: 10px;
+  width: 100%;
+  height: 100%;
+  margin: var(--spacing-lg) auto;
+  border: 2px solid var(--azul-umss);
+  border-radius: 10px;
+  box-shadow: var(--shadow-md);
+  padding: var(--spacing-sm);
 }
 
+/* 5.3 Cards Sección MVV */
+#mvv .card-header {
+  padding: var(--spacing-md) var(--spacing-lg) var(--spacing-xs) var(--spacing-lg);
+}
 
-/* =====================================================
-    🖥️ DESKTOP (min-width: 1024px)
-===================================================== */
+#mvv .card.active {
+  max-height: none !important;
+  height: auto !important;
+  min-height: 400px !important;
+  margin-bottom: var(--spacing-xl) !important;
+}
+
+#mvv .card.active .card-content {
+  padding: var(--spacing-xl) var(--spacing-lg) var(--spacing-lg) var(--spacing-lg) !important;
+  max-height: none !important;
+  height: auto !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: flex-start !important;
+  min-height: 280px !important;
+  margin-top: -10px !important;
+}
+
+/* 5.4 Cards Sección Servicios */
+#servicios .card {
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  transition: all 0.4s ease;
+}
+
+#servicios .card.active {
+  min-height: auto !important;
+  max-height: none !important;
+  margin-bottom: var(--spacing-xl) !important;
+  height: auto !important;
+}
+
+#servicios .card-header {
+  padding: var(--spacing-md) var(--spacing-lg) var(--spacing-xs) var(--spacing-lg);
+  text-align: center;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 160px;
+}
+
+#servicios .card.active .card-content {
+  padding: var(--spacing-xl) var(--spacing-xl) var(--spacing-xl) var(--spacing-xl) !important;
+  max-height: none !important;
+  height: auto !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: flex-start !important;
+  min-height: auto !important;
+  margin-top: -10px !important;
+}
+
+#servicios .card-title {
+  font-size: clamp(0.7rem, 4vw, 1.4rem);
+  line-height: 1.2;
+  text-align: center;
+  padding: 8px;
+  white-space: normal;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+  display: block;
+  width: 100%;
+}
+
+/* 5.5 Cards Sección Contacto */
+#contacto .card-header {
+  padding: var(--spacing-md) var(--spacing-lg) var(--spacing-xs) var(--spacing-lg);
+}
+
+#contacto .card.active {
+  max-height: 320px !important;
+  margin-bottom: var(--spacing-xl) !important;
+  min-height: 320px !important;
+}
+
+#contacto .card.active .card-content {
+  padding: var(--spacing-xl) var(--spacing-lg) var(--spacing-lg) var(--spacing-lg) !important;
+  max-height: none !important;
+  height: auto !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: flex-start !important;
+  min-height: 200px !important;
+  margin-top: -10px !important;
+}
+
+#contacto .card.w3-card-4.active {
+  max-height: 320px !important;
+  min-height: 320px !important;
+  height: auto !important;
+}
+
+#contacto .card-content a {
+  color: var(--celeste-memi);
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+#contacto .card-content a:hover {
+  color: white;
+  text-decoration: underline;
+}
+
+#contacto .card-content strong {
+  font-size: 1.1rem;
+  margin-bottom: var(--spacing-sm);
+  display: block;
+}
+
+#contacto .card-content p {
+  margin-bottom: 8px;
+}
+
+/* ==========================================================================
+   6. Formularios y Modales
+   ========================================================================== */
+
+/* Headers de publicaciones */
+.publicaciones-header, .icpc-header {
+  text-align: center;
+  margin: var(--spacing-lg) 0;
+}
+
+/* Modales */
+.formulario-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 2000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: var(--spacing-lg);
+}
+
+.formulario-contenido {
+  background: white;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 500px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: var(--shadow-lg);
+}
+
+/* Headers de formularios */
+.formulario-header {
+  background-color: var(--azul-umss);
+  color: white;
+  padding: var(--spacing-md) var(--spacing-lg);
+  border-radius: 12px 12px 0 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.formulario-header h3 {
+  margin: 0;
+  font-size: 1.3rem;
+}
+
+.btn-cerrar {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background-color 0.3s ease;
+}
+
+.btn-cerrar:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Formularios */
+#form-publicacion {
+  padding: var(--spacing-lg);
+}
+
+.campo-grupo {
+  margin-bottom: var(--spacing-lg);
+}
+
+.campo-grupo label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: var(--azul-umss);
+}
+
+.campo-grupo input,
+.campo-grupo textarea,
+.campo-grupo select {
+  width: 100%;
+  padding: var(--spacing-sm);
+  border: 2px solid #ddd;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.campo-grupo input:focus,
+.campo-grupo textarea:focus,
+.campo-grupo select:focus {
+  outline: none;
+  border-color: var(--azul-umss);
+}
+
+.campo-grupo small {
+  color: #666;
+  font-size: 0.9rem;
+  margin-top: 5px;
+  display: block;
+}
+
+/* Botones de formularios */
+.formulario-botones {
+  display: flex;
+  gap: var(--spacing-sm);
+  justify-content: flex-end;
+  margin-top: var(--spacing-lg);
+}
+
+.formulario-botones button {
+  padding: var(--spacing-sm) var(--spacing-lg);
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+#btn-cancelar, #btn-cancelar-icpc, #btn-cancelar-curso {
+  background-color: #6c757d;
+  color: white;
+}
+
+#btn-cancelar:hover, #btn-cancelar-icpc:hover, #btn-cancelar-curso:hover {
+  background-color: #5a6268;
+}
+
+#btn-guardar, #btn-guardar-icpc, #btn-guardar-curso {
+  background-color: var(--azul-umss);
+  color: white;
+}
+
+#btn-guardar:hover, #btn-guardar-icpc:hover, #btn-guardar-curso:hover {
+  background-color: var(--celeste-memi);
+  color: #000;
+}
+
+/* ==========================================================================
+   7. Carrusel y Elementos Dinámicos
+   ========================================================================== */
+
+/* Carrusel de inicio */
+.carrusel-inicio {
+  margin-bottom: var(--spacing-xl);
+}
+
+.carrusel-loader {
+  width: 100%;
+  text-align: center;
+  color: var(--azul-umss);
+  font-size: 1.1rem;
+  padding: 40px 0;
+  font-weight: bold;
+  background: #f0f4f8;
+  border-radius: 12px;
+}
+
+.carrusel-contenedor {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: var(--shadow-md);
+}
+
+.carousel-wrapper {
+  position: relative;
+  width: 100%;
+  background: #fff;
+}
+
+.carousel-inner {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+}
+
+.carousel-item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  display: flex;
+  flex-direction: column;
+}
+
+.carousel-item.active {
+  opacity: 1;
+}
+
+.carousel-img {
+  width: 100%;
+  height: 70%;
+  object-fit: cover;
+}
+
+.carousel-title {
+  height: 30%;
+  background: rgba(1,57,116,0.9);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-md);
+}
+
+.carousel-title a {
+  color: #fff;
+  text-decoration: none;
+  width: 100%;
+}
+
+.title-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+/* Controles del carrusel */
+.carousel-control-prev,
+.carousel-control-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(1,57,116,0.7);
+  color: #fff;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background 0.3s;
+  z-index: 10;
+}
+
+.carousel-control-prev {
+  left: var(--spacing-sm);
+}
+
+.carousel-control-next {
+  right: var(--spacing-sm);
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+  background: rgba(1,57,116,0.9);
+}
+
+.carousel-indicators {
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  z-index: 10;
+}
+
+.carousel-indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255,255,255,0.5);
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.carousel-indicator.active {
+  background: #fff;
+}
+
+/* ==========================================================================
+   8. Publicaciones y Contenido
+   ========================================================================== */
+
+/* Tags y etiquetas */
+.tag {
+  display: inline-block;
+  font-size: 0.85em;
+  font-weight: bold;
+  border-radius: 8px;
+  padding: 2px 8px;
+  margin-right: 6px;
+  vertical-align: middle;
+}
+
+.tag-publicacion {
+  background: var(--celeste-memi);
+  color: var(--azul-umss);
+}
+
+.tag-icpc {
+  background: #4CAF50;
+  color: white;
+}
+
+.tag-curso, .tag-seminario {
+  background: #FF9800;
+  color: white;
+}
+
+/* Secciones de publicaciones */
+.publicaciones-inicio {
+  margin-top: var(--spacing-xl);
+  padding-top: var(--spacing-sm);
+  border-top: 1px solid #e0e0e0;
+  padding: var(--spacing-lg);
+  background-color: #f8f9fa;
+  border-radius: 10px;
+}
+
+.publicaciones-inicio h2 {
+  color: var(--azul-umss);
+  margin-bottom: var(--spacing-md);
+}
+
+.cursos-container {
+  margin-top: var(--spacing-lg);
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: var(--spacing-lg);
+}
+
+.icpc-inicio {
+  margin-top: var(--spacing-xl);
+  padding: var(--spacing-lg);
+  background-color: #f0f8ff;
+  border-radius: 10px;
+  border-left: 4px solid var(--azul-umss);
+}
+
+.icpc-inicio h2 {
+  color: var(--azul-umss);
+  margin-bottom: var(--spacing-md);
+  
+}
+
+/* Elementos de publicaciones */
+.lista-publicaciones {
+  margin-top: var(--spacing-xl);
+}
+
+.lista-publicaciones h2 {
+  color: var(--azul-umss);
+  border-bottom: 2px solid var(--celeste-memi);
+  padding-bottom: var(--spacing-sm);
+  margin-bottom: var(--spacing-lg);
+}
+
+.publicacion-item {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: var(--spacing-md);
+  margin-bottom: var(--spacing-md);
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.3s ease;
+}
+
+.publicacion-item:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.publicacion-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: var(--spacing-sm);
+}
+
+.publicacion-titulo {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--azul-umss);
+  margin: 0;
+}
+
+.publicacion-area {
+  background-color: var(--celeste-memi);
+  color: var(--azul-umss);
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.publicacion-descripcion {
+  color: #333;
+  line-height: 1.5;
+  margin-bottom: var(--spacing-sm);
+}
+
+.publicacion-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.publicacion-acciones {
+  display: flex;
+  gap: var(--spacing-sm);
+  align-items: center;
+}
+
+.publicacion-fecha {
+  font-style: italic;
+}
+
+/* Imágenes y previews de ICPC */
+.icpc-imagen-mini {
+  max-width: 100%;
+  max-height: 150px;
+  object-fit: contain;
+  border-radius: 6px;
+  margin: var(--spacing-sm) 0;
+}
+
+.icpc-imagen-contenedor {
+  width: 100%;
+  max-height: 300px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: var(--spacing-md) 0;
+  border-radius: 8px;
+  background-color: #f0f4f8;
+}
+
+.icpc-imagen {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  max-height: 300px;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: var(--shadow-sm);
+}
+
+.url-preview-mini {
+  background: #f0f4f8;
+  padding: 8px 12px;
+  border-radius: 6px;
+  margin: var(--spacing-sm) 0;
+}
+
+.url-preview {
+  background-color: #f8f9fa;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: var(--spacing-md);
+  margin: var(--spacing-md) 0;
+  box-shadow: var(--shadow-sm);
+}
+
+.url-preview-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: var(--spacing-sm);
+}
+
+.url-icon {
+  font-size: 1.4rem;
+  margin-right: var(--spacing-sm);
+  color: var(--azul-umss);
+}
+
+.url-domain {
+  font-weight: bold;
+  color: #444;
+}
+
+.url-link {
+  display: block;
+  word-break: break-all;
+  color: var(--azul-umss);
+  margin: var(--spacing-sm) 0;
+  font-size: 0.9rem;
+}
+
+.url-preview-footer {
+  margin-top: var(--spacing-md);
+}
+
+.url-preview-button {
+  background-color: var(--azul-umss);
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.3s;
+}
+
+.url-preview-button:hover {
+  background-color: var(--celeste-memi);
+  color: #000;
+}
+
+/* ==========================================================================
+   9. Footer
+   ========================================================================== */
+
+.footer {
+  background-color: var(--azul-umss);
+  color: white;
+  padding: var(--spacing-md) var(--spacing-sm);
+  display: flex;
+  flex-direction: column;
+}
+
+.footer a {
+  color: var(--celeste-memi);
+}
+
+.footer a:hover {
+  color: var(--rojo-umss);
+}
+
+.columnas-footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-self: center;
+  margin-bottom: 8px;
+}
+
+.col-footer p {
+  margin: 4px;
+}
+
+.copyright {
+  margin-top: 8px;
+  font-size: 0.9rem;
+  color: #ddd;
+  text-align: center;
+  width: 100%;
+}
+
+/* ==========================================================================
+   10. Media Queries - Responsive Design
+   ========================================================================== */
+
+/* 10.1 Móviles Pequeños (hasta 320px) */
+@media (max-width: 320px) {
+  #servicios .card-title {
+    font-size: clamp(0.6rem, 5vw, 0.9rem);
+    padding: 6px;
+    line-height: 1.1;
+  }
+}
+
+/* 10.2 Móviles (321px - 480px) */
+@media (min-width: 321px) and (max-width: 480px) {
+  #servicios .card-title {
+    font-size: clamp(0.7rem, 4.5vw, 1rem);
+    padding: 8px;
+  }
+}
+
+/* 10.3 Tablets (481px - 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+  #servicios .card-title {
+    font-size: clamp(0.9rem, 3.5vw, 1.2rem);
+    padding: var(--spacing-sm);
+  }
+}
+
+/* 10.4 Desktop (768px+) */
 @media (min-width: 768px) {
-  /* ----- HEADER ----- */
+  /* Header Desktop */
   .titulo-header {
     font-size: 2.2rem;
   }
@@ -307,32 +1118,24 @@ a {
     height: 90px;
   }
 
-  /* ----- FOOTER ----- */
-  .footer {
-    padding: 20px;
-  }
-
-  .columnas-footer {
-    flex-direction: row;
-    gap: 150px;
-  }
-
-  /* ----- NAVBAR ----- */
+  /* Navbar Desktop */
   .nav-toggle {
     display: none;
   }
 
   .nav-container {
+    width: 100%;
     flex-direction: row;
-    justify-content: space-between;
     align-items: center;
+    overflow-x: auto;
   }
 
   .nav-menu {
     display: flex !important;
+    width: 100%;
+    justify-content: flex-start;
+    white-space: nowrap;
     flex-direction: row;
-    justify-content: space-between;
-    overflow-x: auto;
   }
 
   .nav-link.active {
@@ -340,13 +1143,85 @@ a {
     color: white !important;
     border-radius: 4px;
   }
-  /* ----- CARDS ----- */
+
+  /* Carrusel Desktop */
+  .carousel-inner {
+    height: 400px;
+  }
+  
+  .carousel-control-prev,
+  .carousel-control-next {
+    width: 50px;
+    height: 50px;
+    font-size: 1.5rem;
+  }
+  
+  .carousel-control-prev {
+    left: 15px;
+  }
+  
+  .carousel-control-next {
+    right: 15px;
+  }
+  
+  .title-content {
+    font-size: 1.1rem;
+  }
+
+  /* Cards Desktop */
   .cards-container {
     flex-direction: row;
     justify-content: center;
-    gap: 30px;
+    gap: var(--spacing-xl);
   }
-  .card.active{
+
+  /* Layout específico para servicios en desktop */
+  #servicios .cards-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto auto;
+    gap: var(--spacing-xl);
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: var(--spacing-sm) var(--spacing-lg);
+    justify-items: center;
+    align-items: start;
+  }
+
+  /* Posicionamiento específico para 3-2 layout centrado */
+  #servicios .card:nth-child(4) {
+    grid-column: 1 / 2;
+    grid-row: 2;
+    transform: translateX(50%);
+    max-width: 350px;
+  }
+
+  #servicios .card:nth-child(5) {
+    grid-column: 2 / 3;
+    grid-row: 2;
+    transform: translateX(50%);
+    max-width: 350px;
+  }
+
+  #servicios .card {
+    min-height: 220px;
+  }
+
+  #servicios .card.active {
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 auto 30px auto !important;
+    min-height: auto !important;
+    max-height: none !important;
+    height: auto !important;
+  }
+
+  #servicios .card-header {
+    min-height: 160px;
+    padding: var(--spacing-md) var(--spacing-lg) 5px var(--spacing-lg);
+  }
+
+  .card.active {
     width: 100%;
     background-color: var(--azul-umss);
     box-shadow: 0 12px 30px rgba(1, 57, 116, 0.3);
@@ -361,28 +1236,254 @@ a {
     height: 100px;
   }
 
-  /* ----- SECCIÓN "ACERCA" EN DESKTOP ----- */
-  #acerca .cards-container.has-active-card {
+  /* Sección "ACERCA" Desktop */
+  #acerca .cards-container {
+    overflow: visible;
+    position: relative;
+    display: flex;
     flex-direction: column;
-    align-items: stretch;
-    gap: 30px;
+    gap: var(--spacing-xl);
+    align-items: center;
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    padding: 0 var(--spacing-lg);
+  }
+
+  #acerca .card {
+    transition: all 0.4s ease;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  #acerca .card-header {
+    padding: var(--spacing-md) var(--spacing-lg) 5px var(--spacing-lg);
+  }
+
+  #acerca .card.active {
+    width: calc(100vw - 80px) !important;
+    max-width: calc(100vw - 80px) !important;
+    margin: 0 auto 30px auto !important;
+    min-height: 500px;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    box-shadow: var(--shadow-xl);
+    order: 0;
   }
   
-  #acerca .card.active {
-    width: 100% !important;
-    max-width: none !important;
-    margin-bottom: 30px;
+  #acerca .card.active .card-content {
+    padding: var(--spacing-xl) var(--spacing-xl) var(--spacing-xl) var(--spacing-xl);
+    max-height: none;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-top: -10px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Cuando hay un card activo, reorganizar en columna */
+  #acerca .cards-container:has(.card.active) {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+    align-items: center;
+    width: 100%;
+    padding: 0;
+  }
+
+  /* Cards no activos se comprimen y solo muestran header */
+  #acerca .cards-container:has(.card.active) .card:not(.active) {
+    width: 100%;
+    max-width: 600px;
+    min-height: auto;
+    margin: 0 auto;
+  }
+
+  #acerca .cards-container:has(.card.active) .card:not(.active) .card-content {
+    display: none;
+  }
+
+  /* Ordenamiento específico basado en cuál card está activo */
+  #acerca .cards-container:has(.card:nth-child(1).active) .card:nth-child(2) {
+    order: 2;
+  }
+
+  #acerca .cards-container:has(.card:nth-child(1).active) .card:nth-child(3) {
+    order: 3;
+  }
+
+  #acerca .cards-container:has(.card:nth-child(2).active) .card:nth-child(1) {
     order: -1;
   }
-  
-  #acerca .cards-container.has-active-card .card:not(.active) {
-    flex: 0 1 280px;
-    max-width: 280px;
-    order: 1;
+
+  #acerca .cards-container:has(.card:nth-child(2).active) .card:nth-child(3) {
+    order: 2;
+  }
+
+  #acerca .cards-container:has(.card:nth-child(3).active) .card:nth-child(1) {
+    order: -2;
+  }
+
+  #acerca .cards-container:has(.card:nth-child(3).active) .card:nth-child(2) {
+    order: -1;
   }
   
   #acerca .card-content img {
     width: 80px;
   }
+
+  /* Cards MVV Desktop */
+  #mvv .card-header {
+    padding: var(--spacing-md) var(--spacing-lg) 5px var(--spacing-lg);
+  }
+
+  #mvv .card.active {
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 auto 30px auto !important;
+    min-height: 450px !important;
+    max-height: none !important;
+  }
+  
+  #mvv .card.active .card-content {
+    padding: var(--spacing-xl) var(--spacing-xl) var(--spacing-xl) var(--spacing-xl) !important;
+    max-height: none !important;
+    height: auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-start !important;
+    min-height: 320px !important;
+    margin-top: -10px !important;
+  }
+
+  /* Cards de servicios Desktop */
+  #servicios .card.active {
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 auto 30px auto !important;
+    min-height: auto !important;
+    max-height: none !important;
+    height: auto !important;
+  }
+
+  /* Cards de contacto Desktop */
+  #contacto .card.active {
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 auto 30px auto !important;
+    min-height: 420px !important;
+    max-height: none !important;
+    height: auto !important;
+  }
+
+  #contacto .card-header {
+    padding: var(--spacing-md) var(--spacing-lg) 5px var(--spacing-lg);
+  }
+
+  #contacto .card.w3-card-4.active {
+    min-height: 420px !important;
+    max-height: none !important;
+  }
+  
+  #servicios .card.active .card-content {
+    padding: var(--spacing-xl) var(--spacing-xl) var(--spacing-xl) var(--spacing-xl) !important;
+    max-height: none !important;
+    height: auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-start !important;
+    min-height: auto !important;
+    margin-top: -10px !important;
+  }
+
+  #contacto .card.active .card-content {
+    padding: var(--spacing-xl) var(--spacing-xl) var(--spacing-xl) var(--spacing-xl) !important;
+    max-height: none !important;
+    height: auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-start !important;
+    min-height: 280px !important;
+    margin-top: -10px !important;
+  }
+
+  /* Servicios Desktop */
+  #servicios .card-title {
+    font-size: clamp(1rem, 2.5vw, 1.6rem);
+    padding: 12px 15px;
+    line-height: 1.3;
+  }
+
+  /* Formularios Desktop */
+  .formulario-contenido {
+    max-width: 600px;
+  }
+
+  .formulario-botones {
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+
+  /* Publicaciones Desktop */
+  .publicacion-item {
+    padding: var(--spacing-lg);
+  }
+
+  .publicacion-header {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .publicaciones-inicio {
+    padding: var(--spacing-xl);
+  }
+
+  #publicaciones-recientes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-lg);
+  }
+
+  /* Footer Desktop */
+  .footer {
+    padding: var(--spacing-lg);
+  }
+
+  .columnas-footer {
+    flex-direction: row;
+    gap: 150px;
+  }
 }
 
+/**
+ * Centro MEMI - Universidad Mayor de San Simón
+ * Hoja de estilos principal
+ * 
+ * ÍNDICE:
+ * -----------------------------
+ * 1. Variables y Reset
+ * 2. Componentes Base
+ * 3. Layout y Estructura
+ * 4. Header y Navegación
+ * 5. Cards - Diseño y Comportamiento
+ *    5.1 Estilos Base de Cards
+ *    5.2 Cards Sección Acerca
+ *    5.3 Cards Sección MVV
+ *    5.4 Cards Sección Servicios
+ *    5.5 Cards Sección Contacto
+ * 6. Formularios y Modales
+ * 7. Carrusel y Elementos Dinámicos
+ * 8. Publicaciones y Contenido
+ * 9. Footer
+ * 10. Media Queries
+ *     10.1 Móviles Pequeños (hasta 320px)
+ *     10.2 Móviles (321px - 480px)
+ *     10.3 Tablets (481px - 768px)
+ *     10.4 Desktop (768px+)
+ */

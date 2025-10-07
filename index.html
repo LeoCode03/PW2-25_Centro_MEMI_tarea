@@ -1,28 +1,29 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Centro MEMI</title>
-
-    <!-- W3.CSS -->
+    <title>Centro MEMI - Universidad Mayor de San Simón</title>
+    
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-
-    <!-- Estilos propios -->
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
 
-    <!-- HEADER -->
+<body>
+    <!-- ========================================================================
+        HEADER 
+    ======================================================================== -->
     <header class="header w3-padding-small">
-        <a href="#" id="home-link-logo">
-            <img src="images/logo-MEMI.png" alt="Logo MEMI" class="logo">
-        </a>
+        <img src="images/logo-MEMI.png" alt="Logo MEMI" class="logo">
         <h1 class="titulo-header"><strong>CENTRO MEMI</strong></h1>
         <img src="images/logo-FCYT.png" alt="Logo FCYT" class="logo">
     </header>
 
-    <!-- NAVBAR -->
+
+    <!-- ========================================================================
+        NAVBAR 
+    ======================================================================== -->
     <nav class="navbar">
         <div class="nav-container">
             <button class="nav-toggle w3-button w3-large" id="nav-toggle">&#9776;</button>
@@ -39,19 +40,41 @@
         </div>
     </nav>
 
-    <!-- CONTENIDO PRINCIPAL -->
+
+    <!-- ========================================================================
+        MAIN 
+    ======================================================================== -->
     <main class="w3-container w3-padding-16" id="main-content">
-        <!-- INICIO -->
-        <section id="inicio" class="section">
-            <h1>Bienvenido a mi Web</h1>
-            <p>Selecciona una opción del menú para ver su contenido.</p>
+        
+
+        <!-- ====================================================================
+            SECCIÓN INICIO 
+        ==================================================================== -->
+        <section id="inicio" class="section">            
+            <!-- Carrusel de novedades -->
+            <div class="carrusel-inicio">
+                <h2>Últimas Novedades</h2>
+                <div id="carrusel-imagenes" class="carrusel-contenedor"></div>
+            </div>
+            
+            <!-- Publicaciones recientes -->
+            <div class="publicaciones-inicio">
+                <h2>📚 Recientes</h2>
+                <div id="publicaciones-recientes"></div>
+                <div id="mensaje-sin-publicaciones-inicio" class="mensaje-vacio">
+                    <p>No hay publicaciones disponibles aún.</p>
+                </div>
+            </div>
         </section>
 
-        <!-- Misión, Visión y Valores -->
+        <!-- ====================================================================
+            MISIÓN, VISIÓN Y VALORES
+        ==================================================================== -->
         <section id="mvv" class="section" style="display:none">
             <h1>Misión, Visión y Valores</h1>
             
             <div class="cards-container">
+                <!-- Card Misión -->
                 <div class="card w3-card-4">
                     <div class="card-header">
                         <img src="images/icon-MISION.png" alt="Misión">
@@ -62,6 +85,7 @@
                     </div>
                 </div>
 
+                <!-- Card Visión -->
                 <div class="card w3-card-4">
                     <div class="card-header">
                         <img src="images/icon-VISION.png" alt="Visión">
@@ -72,6 +96,7 @@
                     </div>
                 </div>
 
+                <!-- Card Valores -->
                 <div class="card w3-card-4">
                     <div class="card-header">
                         <img src="images/icon-VALORES.png" alt="Valores">
@@ -95,28 +120,40 @@
             </div>
         </section>
 
-        <!-- Acerca de -->
+
+        <!-- ====================================================================
+            ACERCA DE 
+        ==================================================================== -->
         <section id="acerca" class="section" style="display:none">
             <h1>Acerca de</h1>
             
             <div class="cards-container">
+                <!-- Card Antecedentes/Historia -->
                 <div class="card w3-card-4">
                     <div class="card-header">
                         <img src="images/icon-ANTECEDENTES.png" alt="Historia">
                         <h3 class="card-title">Antecedentes</h3>
                     </div>
                     <div class="card-content">
+                        <!-- Fase 1 -->
                         <img src="images/icon-FASE1.png" alt="Fase 1 MEMI">  
-                        <p>En enero de 1991 inició sus actividades el Programa de Mejoramiento de la Enseñanza de la Matemática e Informática (MEMI), con el objetivo de mejorar la educación en las áreas de Matemática e Informática de la Facultad de Ciencias y Tecnología en la Universidad Mayor de San Simón. El Proyecto cubrió tres áreas: Matemáticas a nivel universitario, Matemáticas a nivel ciclo medio e Informática a nivel universitario. </p>
+                        <p>En enero de 1991 inició sus actividades el Programa de Mejoramiento de la Enseñanza de la Matemática e Informática (MEMI), con el objetivo de mejorar la educación en las áreas de Matemática e Informática de la Facultad de Ciencias y Tecnología en la Universidad Mayor de San Simón. El Proyecto cubrió tres áreas: Matemáticas a nivel universitario, Matemáticas a nivel ciclo medio e Informática a nivel universitario.</p>
+                        
+                        <!-- Fase 2 -->
                         <img src="images/icon-FASE2.png" alt="Fase 2 MEMI">  
-                        <p>La segunda fase del Programa MEMI abarca el período 1994-1997, en la cual se destacan los primeros posgrados de San Simón, en áreas de Matemática e Informática. </p>
+                        <p>La segunda fase del Programa MEMI abarca el período 1994-1997, en la cual se destacan los primeros posgrados de San Simón, en áreas de Matemática e Informática.</p>
+                        
+                        <!-- Fase 3 -->
                         <img src="images/icon-FASE3.png" alt="Fase 3 MEMI">  
-                        <p>Finalmente, la tercera fase abarca el período 1999-2003. Su tarea fundamental, en base al compromiso asumido con los cooperantes holandeses (NUFFIC y la Universidad de Utrecht), fue garantizar la sostenibilidad de las actividades de este Programa. </p>
+                        <p>Finalmente, la tercera fase abarca el período 1999-2003. Su tarea fundamental, en base al compromiso asumido con los cooperantes holandeses (NUFFIC y la Universidad de Utrecht), fue garantizar la sostenibilidad de las actividades de este Programa.</p>
+                        
+                        <!-- Fase 4 -->
                         <img src="images/icon-FASE4.png" alt="Fase 4 MEMI">  
                         <p>A partir del 2010, mediante Resolución Rectoral N° 389/10, el Programa MEMI adopta la denominación de Centro de Mejoramiento de la Enseñanza de la Matemática e Informática (Centro MEMI).</p>
                     </div>
                 </div>
 
+                <!-- Card Autoridades -->
                 <div class="card w3-card-4">
                     <div class="card-header">
                         <img src="images/icon-AUTORIDADES.png" alt="Equipo">
@@ -127,62 +164,337 @@
                     </div>
                 </div>
 
+                <!-- Card Organigrama -->
                 <div class="card w3-card-4">
                     <div class="card-header">
                         <img src="images/icon-ORGANIGRAMA.png" alt="Infraestructura">
-                        <h3 class="card-title">Ornigrama</h3>
+                        <h3 class="card-title">Organigrama</h3>
                     </div>
                     <div class="card-content">
-                        <img src="images/ORGANIGRAMA.png" alt="Ornigrama memi">
+                        <img src="images/ORGANIGRAMA.png" alt="Organigrama MEMI">
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Otras secciones -->
+
+        <!-- ====================================================================
+            CURSOS Y SEMINARIOS
+        ==================================================================== -->
         <section id="cursos" class="section" style="display:none">
             <h1>Cursos y Seminarios</h1>
-            <p>Explora nuestra oferta de formación en tecnología e informática.</p>
+            <!-- Botón para agregar nuevo curso -->
+            <div class="publicaciones-header">
+                <button id="btn-nuevo-curso" class="btn-primary">
+                    <span>📄</span> Nuevo Curso/Seminario
+                </button>
+            </div>
+
+            <!-- Contenedor de cursos -->
+            <div id="contenedor-cursos" class="cursos-container"></div>
+            <div id="mensaje-sin-cursos" class="mensaje-vacio">
+                <p>No hay cursos o seminarios disponibles aún.</p>
+            </div>
+
+            <!-- Modal para agregar curso -->
+            <div id="formulario-curso" class="formulario-modal" style="display: none;">
+                <div class="formulario-contenido">
+                    <div class="formulario-header">
+                        <h3>📚 Nuevo Curso o Seminario</h3>
+                        <button id="btn-cerrar-formulario-curso" class="btn-cerrar">&times;</button>
+                    </div>
+                    <form id="form-curso" enctype="multipart/form-data">
+                        <div class="campo-grupo">
+                            <label for="titulo-curso">Título:</label>
+                            <input type="text" id="titulo-curso" name="titulo-curso" required>
+                        </div>
+                        <div class="campo-grupo">
+                            <label for="descripcion-curso">Descripción:</label>
+                            <textarea id="descripcion-curso" name="descripcion-curso" rows="4" required></textarea>
+                        </div>
+                        <div class="campo-grupo">
+                            <label for="tipo-curso">Tipo:</label>
+                            <select id="tipo-curso" name="tipo-curso" required>
+                                <option value="">Selecciona tipo</option>
+                                <option value="curso">Curso</option>
+                                <option value="seminario">Seminario</option>
+                            </select>
+                        </div>
+                        <div class="campo-grupo">
+                            <label for="imagen-curso">Imagen:</label>
+                            <input type="file" id="imagen-curso" name="imagen-curso" accept=".jpg,.jpeg,.png,.gif" required>
+                            <small>Formatos permitidos: JPG, PNG, GIF</small>
+                        </div>
+                        <div class="formulario-botones">
+                            <button type="button" id="btn-cancelar-curso">Cancelar</button>
+                            <button type="submit" id="btn-guardar-curso">Guardar Curso/Seminario</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
         </section>
 
+        <!-- ====================================================================
+            SECCIÓN SERVICIOS
+        ==================================================================== -->
         <section id="servicios" class="section" style="display:none">
             <h1>Servicios</h1>
-            <p>Ofrecemos consultorías, capacitaciones y desarrollo de software.</p>
+            
+            <div class="cards-container">
+                <!-- Servicio: Formación para profesores -->
+                <div class="card w3-card-4">
+                    <div class="card-header">
+                        <img src="images/icon-FORMACION PROFESORES.png" alt="Cursos para profesores de Colegio">
+                        <h3 class="card-title">Cursos de formación para profesores de Colegio</h3>
+                    </div>
+                    <div class="card-content">
+                        <p>Enseñando a enseñar en las áreas de Matemáticas y Computación, con un enfoque práctico y basado en las nuevas tecnologías de información y comunicación, respetando los lineamientos educativos para secundaria, pero con una proyección de utilidad para la transición de alumnos Colegio - Universidad.</p>
+                    </div>
+                </div>
+
+                <!-- Servicio: Actualización profesional -->
+                <div class="card w3-card-4">
+                    <div class="card-header">
+                        <img src="images/icon-ACTUALIZACION.png" alt="Cursos de actualización">
+                        <h3 class="card-title">Cursos de actualización para profesionales</h3>
+                    </div>
+                    <div class="card-content">
+                        <p>Orientado a la actualización de profesionales egresados de las carreras de Matemáticas, Informática y Sistemas, además de otras carreras, en tecnologías informáticas emergentes o de tendencia. Todos los cursos con valor curricular para los participantes.</p>
+                    </div>
+                </div>
+
+                <!-- Servicio: Asesoramiento educativo -->
+                <div class="card w3-card-4">
+                    <div class="card-header">
+                        <img src="images/icon-ASESORAMIENTO MATE INFORMATICA.png" alt="Asesoramiento educativo">
+                        <h3 class="card-title">Asesoramiento en la enseñanza de Matemáticas e Informática</h3>
+                    </div>
+                    <div class="card-content">
+                        <p>Brindamos asesoramiento y seguimiento a profesores de secundaria y docentes universitarios de las áreas de Matemáticas e Informática en métodos, técnicas y herramientas pedagógicas que mejoren su práctica docente y el aprendizaje significativo de sus estudiantes.</p>
+                    </div>
+                </div>
+
+                <!-- Servicio: Conferencias y seminarios -->
+                <div class="card w3-card-4">
+                    <div class="card-header">
+                        <img src="images/icon-CONFERENCIA.png" alt="Conferencias y seminarios">
+                        <h3 class="card-title">Conferencias, seminarios especializados</h3>
+                    </div>
+                    <div class="card-content">
+                        <p>Facilitamos nuestros ambientes e infraestructura para conferencias, seminarios, talleres, conversatorios con profesionales destacados locales o extranjeros, que quieran compartir sus experiencias y conocimientos con profesionales y estudiantes de nuestra universidad. Disponemos de dos salas con capacidad de 40 personas cada una, equipados con: data display, pizarras, porta banderas, etc.</p>
+                    </div>
+                </div>
+
+                <!-- Servicio: Alquiler de ambientes -->
+                <div class="card w3-card-4">
+                    <div class="card-header">
+                        <img src="images/icon-ALQUILER AMBIENTES.png" alt="Alquiler de ambientes">
+                        <h3 class="card-title">Alquiler de ambientes</h3>
+                    </div>
+                    <div class="card-content">
+                        <p>Disponemos de dos ambientes cómodos para defensas públicas, cursos, seminarios, talleres, de carácter privado, con todo el equipamiento para el éxito de sus eventos.</p>
+                    </div>
+                </div>
+            </div>
         </section>
 
+
+        <!-- ====================================================================
+            ICPC UMSS
+        ==================================================================== -->
         <section id="icpc" class="section" style="display:none">
             <h1>ICPC UMSS</h1>
-            <p>Apoyamos a los estudiantes que participan en la competencia ICPC.</p>
+            
+            <!-- Botón para nueva publicación ICPC -->
+            <div class="icpc-header">
+                <button id="btn-nueva-icpc" class="btn-primary">
+                    <span>🏆</span> Nueva Publicación ICPC
+                </button>
+            </div>
+            
+            <!-- Modal para agregar publicación ICPC -->
+            <div id="formulario-icpc" class="formulario-modal" style="display: none;">
+                <div class="formulario-contenido">
+                    <div class="formulario-header">
+                        <h3> Subir Nueva Publicación ICPC</h3>
+                        <button id="btn-cerrar-formulario-icpc" class="btn-cerrar">&times;</button>
+                    </div>
+                    <form id="form-icpc" enctype="multipart/form-data">
+                        <div class="campo-grupo">
+                            <label for="titulo-icpc">Título:</label>
+                            <input type="text" id="titulo-icpc" name="titulo-icpc" required>
+                        </div>
+                        <div class="campo-grupo">
+                            <label for="descripcion-icpc">Descripción:</label>
+                            <textarea id="descripcion-icpc" name="descripcion-icpc" rows="4" required></textarea>
+                        </div>
+                        <div class="campo-grupo">
+                            <label for="tipo-icpc">Tipo de contenido:</label>
+                            <select id="tipo-icpc" name="tipo-icpc" required>
+                                <option value="">Selecciona tipo</option>
+                                <option value="imagen">Imagen</option>
+                                <option value="url">Enlace URL</option>
+                            </select>
+                        </div>
+                        <div class="campo-grupo" id="grupo-archivo-icpc" style="display:none;">
+                            <label for="archivo-icpc">Imagen:</label>
+                            <input type="file" id="archivo-icpc" name="archivo-icpc" accept=".jpg,.jpeg,.png,.gif">
+                        </div>
+                        <div class="campo-grupo" id="grupo-url-icpc" style="display:none;">
+                            <label for="url-icpc">Enlace URL:</label>
+                            <input type="url" id="url-icpc" name="url-icpc" placeholder="https://...">
+                        </div>
+                        <div class="formulario-botones">
+                            <button type="button" id="btn-cancelar-icpc">Cancelar</button>
+                            <button type="submit" id="btn-guardar-icpc">Guardar Publicación</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            
+            <!-- Contenedor de publicaciones ICPC -->
+            <div id="lista-icpc" class="lista-publicaciones">
+                <h2>🏆 Publicaciones ICPC</h2>
+                <div id="contenedor-icpc"></div>
+                <div id="mensaje-sin-icpc" class="mensaje-vacio">
+                    <p>No hay publicaciones ICPC disponibles. ¡Sé el primero en subir una!</p>
+                </div>
+            </div>
         </section>
 
+
+        <!-- ====================================================================
+            CONTACTO
+        ==================================================================== -->
         <section id="contacto" class="section" style="display:none">
             <h1>Contacto</h1>
-            <p>Escríbenos a <a href="mailto:memi@fcyt.umss.edu.bo">memi@fcyt.umss.edu.bo</a></p>
+            
+            <div class="cards-container">
+                <!-- Card Teléfono -->
+                <div class="card w3-card-4">
+                    <div class="card-header">
+                        <img src="images/icon-TELF.png" alt="Teléfono">
+                        <h3 class="card-title">Teléfono</h3>
+                    </div>
+                    <div class="card-content">
+                        <p><a href="tel:+591444666037" target="_blank">(+591) 4 44666037</a></p>
+                        <p>Horarios de atención: Lunes a Viernes de 8:00 a 12:00 y de 14:30 a 18:30</p>
+                    </div>
+                </div>
+
+                <!-- Card Email -->
+                <div class="card w3-card-4">
+                    <div class="card-header">
+                        <img src="images/icon-EMAIL.png" alt="Email">
+                        <h3 class="card-title">E-mail</h3>
+                    </div>
+                    <div class="card-content">
+                        <p><a href="mailto:memi@fcyt.umss.edu.bo" target="_blank">memi@fcyt.umss.edu.bo</a></p>
+                        <p>Escríbenos para consultas sobre cursos, servicios o cualquier información adicional que necesites.</p>
+                    </div>
+                </div>
+
+                <!-- Card Ubicación -->
+                <div class="card w3-card-4">
+                    <div class="card-header">
+                        <img src="images/icon-UBICACION.png" alt="Ubicación">
+                        <h3 class="card-title">Ubicación</h3>
+                    </div>
+                    <div class="card-content">
+                        <p><a href="https://maps.app.goo.gl/5srt3FWma95Ww5mz8" target="_blank">Campus Central UMSS</a></p>
+                        <p>Facultad de Ciencias y Tecnología</p>
+                        <p>Universidad Mayor de San Simón</p>
+                        <p>Cochabamba, Bolivia</p>
+                    </div>
+                </div>
+            </div>
         </section>
 
+
+        <!-- ====================================================================
+            PUBLICACIONES
+        ==================================================================== -->
         <section id="publicaciones" class="section" style="display:none">
             <h1>Publicaciones</h1>
-            <p>Consulta nuestras investigaciones y documentos técnicos.</p>
+            
+            <!-- Botón para nueva publicación -->
+            <div class="publicaciones-header">
+                <button id="btn-nueva-publicacion" class="btn-primary">
+                    <span>📄</span> Nueva Publicación
+                </button>
+            </div>
+
+            <!-- Modal para agregar publicación -->
+            <div id="formulario-publicacion" class="formulario-modal" style="display: none;">
+                <div class="formulario-contenido">
+                    <div class="formulario-header">
+                        <h3>📄 Subir Nueva Publicación</h3>
+                        <button id="btn-cerrar-formulario" class="btn-cerrar">&times;</button>
+                    </div>
+                    
+                    <form id="form-publicacion" enctype="multipart/form-data">
+                        <div class="campo-grupo">
+                            <label for="titulo">Título:</label>
+                            <input type="text" id="titulo" name="titulo" required>
+                        </div>
+                        <div class="campo-grupo">
+                            <label for="descripcion">Descripción:</label>
+                            <textarea id="descripcion" name="descripcion" rows="4" required></textarea>
+                        </div>
+                        <div class="campo-grupo">
+                            <label for="area">Área:</label>
+                            <select id="area" name="area" required>
+                                <option value="">Selecciona un área</option>
+                                <option value="informatica">Informática</option>
+                                <option value="matematicas">Matemáticas</option>
+                            </select>
+                        </div>
+                        <div class="campo-grupo">
+                            <label for="archivo">Archivo (PDF o Imagen):</label>
+                            <input type="file" id="archivo" name="archivo" accept=".pdf,.jpg,.jpeg,.png,.gif" required>
+                            <small>Formatos permitidos: PDF, JPG, PNG, GIF</small>
+                        </div>
+                        <div class="formulario-botones">
+                            <button type="button" id="btn-cancelar">Cancelar</button>
+                            <button type="submit" id="btn-guardar">Guardar Publicación</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Lista de publicaciones -->
+            <div id="lista-publicaciones" class="lista-publicaciones">
+                <h2>📚 Publicaciones Disponibles</h2>
+                <div id="contenedor-publicaciones"></div>
+                <div id="mensaje-sin-publicaciones" class="mensaje-vacio">
+                    <p>No hay publicaciones disponibles. ¡Sé el primero en subir una!</p>
+                </div>
+            </div>
         </section>
     </main>
 
-    <!-- FOOTER -->
+
+    <!-- ========================================================================
+        FOOTER - PIE DE PÁGINA
+    ======================================================================== -->
     <footer class="footer">
         <div class="columnas-footer">
+            <!-- Información de contacto -->
             <div class="col-footer">
                 <p>📞 Teléfono: <a href="tel:+591444666037" target="_blank">(+591) 4 44666037</a></p>
                 <p>📧 E-mail: <a href="mailto:memi@fcyt.umss.edu.bo" target="_blank">memi@fcyt.umss.edu.bo</a></p>
                 <p>🏫 Ubicación: <a href="https://maps.app.goo.gl/5srt3FWma95Ww5mz8" target="_blank">Campus Central UMSS</a></p>
             </div>
+            <!-- Enlaces institucionales -->
             <div class="col-footer">
                 <p>💻 Facebook: <a href="https://www.facebook.com/memiumss/?locale=es_LA" target="_blank">MEMI UMSS</a></p>
                 <p>🌐 FCyT: <a href="http://www.fcyt.umss.edu.bo" target="_blank">Facultad de Ciencias y Tecnología</a></p>
             </div>
         </div>
+        <!-- Copyright -->
         <p class="copyright">© 2025 Centro MEMI – Universidad Mayor de San Simón</p>
     </footer>
 
-    <!-- SCRIPT -->
     <script src="script.js"></script>
 </body>
 </html>
